@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { AmenityMapSection } from "@/components/AmenityMapSection";
 import { WebPageJsonLd } from "@/components/WebPageJsonLd";
 import { agent, brokerage } from "@/lib/site";
 
@@ -60,6 +61,8 @@ export default function PeccoleRanchPage() {
           for current listings and local market insight.
         </p>
       </section>
+
+      <AmenityMapSection variant="compact" />
 
       <p className="mt-10">
         <Link href="/" className="font-medium text-gray-900 underline underline-offset-4 dark:text-white">

@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { nap, directionsUrl, googleReviewsUrl, agent, brokerage } from "@/lib/site";
+import { AmenityMapSection } from "@/components/AmenityMapSection";
 import { WebPageJsonLd } from "@/components/WebPageJsonLd";
 
 export default function HomePage() {
@@ -57,6 +58,8 @@ export default function HomePage() {
           we focus on this neighborhood so we can give you hyperlocal market insight and a smooth experience.
         </p>
       </section>
+
+      <AmenityMapSection />
 
       <section className="mt-12 flex flex-wrap gap-6">
         <Link

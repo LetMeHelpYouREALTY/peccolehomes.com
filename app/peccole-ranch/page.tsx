@@ -1,12 +1,16 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { WebPageJsonLd } from "@/components/WebPageJsonLd";
+import { BreadcrumbJsonLd } from "@/components/BreadcrumbJsonLd";
 import { agent, brokerage } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Peccole Ranch Homes | Las Vegas Master-Planned Community",
   description:
     "Peccole Ranch Homes in Summerlin, Las Vegas: parks, schools, Red Rock access, and family-friendly living. Your guide from Dr. Jan Duffy, Berkshire Hathaway HomeServices Nevada Properties.",
+  alternates: {
+    canonical: "/peccole-ranch",
+  },
 };
 
 export default function PeccoleRanchPage() {
@@ -16,6 +20,12 @@ export default function PeccoleRanchPage() {
         name="Peccole Ranch Homes | Las Vegas Master-Planned Community"
         description={`Peccole Ranch is a master-planned community in Summerlin, Las Vegas, Nevada, with parks, top schools, and access to Red Rock Canyon and the 215. Guide from ${agent.name}, ${brokerage.name}.`}
         path="/peccole-ranch"
+      />
+      <BreadcrumbJsonLd
+        items={[
+          { name: "Home", path: "/" },
+          { name: "Peccole Ranch" },
+        ]}
       />
       <h1 className="text-4xl font-bold tracking-tight text-gray-900 dark:text-white">
         Peccole Ranch Homes & Community

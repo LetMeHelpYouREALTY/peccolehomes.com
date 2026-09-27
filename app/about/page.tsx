@@ -1,10 +1,14 @@
 import type { Metadata } from "next";
 import { nap, site, agent, brokerage } from "@/lib/site";
 import { WebPageJsonLd } from "@/components/WebPageJsonLd";
+import { BreadcrumbJsonLd } from "@/components/BreadcrumbJsonLd";
 
 export const metadata: Metadata = {
   title: "About Us",
   description: `About ${nap.businessName} — ${agent.name}, ${brokerage.name}. Peccole Ranch Homes and Las Vegas real estate. Local knowledge, trusted service.`,
+  alternates: {
+    canonical: "/about",
+  },
 };
 
 export default function AboutPage() {
@@ -14,6 +18,12 @@ export default function AboutPage() {
         name={`About ${nap.businessName}`}
         description={`${nap.businessName} — ${agent.name}, ${agent.license}, with ${brokerage.name}. Peccole Ranch Homes and Summerlin, Las Vegas. Office: ${nap.street}, ${nap.city}, ${nap.state} ${nap.zip}.`}
         path="/about"
+      />
+      <BreadcrumbJsonLd
+        items={[
+          { name: "Home", path: "/" },
+          { name: "About" },
+        ]}
       />
       <h1 className="text-4xl font-bold tracking-tight text-gray-900 dark:text-white">
         About {nap.businessName}

@@ -1,10 +1,14 @@
 import type { Metadata } from "next";
 import { nap, fullAddress, directionsUrl, agent, brokerage } from "@/lib/site";
 import { WebPageJsonLd } from "@/components/WebPageJsonLd";
+import { BreadcrumbJsonLd } from "@/components/BreadcrumbJsonLd";
 
 export const metadata: Metadata = {
   title: "Contact",
   description: `Contact ${agent.name}, ${brokerage.name}, for Peccole Ranch Homes. Visit ${nap.street}, ${nap.city}, or call.`,
+  alternates: {
+    canonical: "/contact",
+  },
 };
 
 export default function ContactPage() {
@@ -14,6 +18,12 @@ export default function ContactPage() {
         name="Contact Peccole Homes"
         description={`Contact ${agent.name}, ${brokerage.name}, for Peccole Ranch Homes: call ${nap.phone}, visit ${fullAddress}, or get directions online.`}
         path="/contact"
+      />
+      <BreadcrumbJsonLd
+        items={[
+          { name: "Home", path: "/" },
+          { name: "Contact" },
+        ]}
       />
       <h1 className="text-4xl font-bold tracking-tight text-gray-900 dark:text-white">
         Contact us

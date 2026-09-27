@@ -20,7 +20,7 @@ export function Footer() {
             </address>
             <div className="mt-4 flex flex-wrap gap-3">
               <a
-                href={`tel:${nap.phone.replace(/\D/g, "")}`}
+                href={`tel:${nap.phoneTel}`}
                 className="inline-flex items-center rounded-md bg-gray-800 px-4 py-2 text-sm font-medium text-white hover:bg-gray-700 dark:bg-gray-700 dark:hover:bg-gray-600"
               >
                 Call

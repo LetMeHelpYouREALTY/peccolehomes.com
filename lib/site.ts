@@ -15,8 +15,12 @@ export const nap = {
   city: "Las Vegas",
   state: "NV",
   zip: "89117",
-  /** Replace with GBP phone; use tel: link in UI */
-  phone: "(702) 555-0100",
+  /** Must match Google Business Profile */
+  phone: "(702) 500-0810",
+  /** E.164 for tel: links */
+  phoneTel: "+17025000810",
+  /** Schema.org telephone */
+  phoneSchema: "+1-702-500-0810",
 } as const;
 
 export const fullAddress = `${nap.street}, ${nap.city}, ${nap.state} ${nap.zip}`;

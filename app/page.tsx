@@ -29,7 +29,7 @@ export default function HomePage() {
         </p>
         <div className="mt-8 flex flex-wrap justify-center gap-4">
           <a
-            href={`tel:${nap.phone.replace(/\D/g, "")}`}
+            href={`tel:${nap.phoneTel}`}
             className="inline-flex rounded-md bg-gray-900 px-6 py-3 text-base font-medium text-white hover:bg-gray-800 dark:bg-gray-100 dark:text-gray-900 dark:hover:bg-gray-200"
           >
             Call

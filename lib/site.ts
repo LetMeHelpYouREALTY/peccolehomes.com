@@ -26,9 +26,9 @@ export const nap = {
 export const fullAddress = `${nap.street}, ${nap.city}, ${nap.state} ${nap.zip}`;
 
 export const geo = {
-  /** For schema and map embed - office/Peccole Ranch area */
-  latitude: 36.1797,
-  longitude: -115.2648,
+  /** Peccole Ranch Community Association clubhouse, 9501 Red Hills Rd (OSM geocode) */
+  latitude: 36.154412,
+  longitude: -115.302415,
 } as const;
 
 /** Google Maps URL for Directions CTA */

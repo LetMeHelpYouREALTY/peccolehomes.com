@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { nap, directionsUrl, googleReviewsUrl, agent, brokerage } from "@/lib/site";
 import { homeFaqs } from "@/lib/faqs";
+import { AmenityMapSection } from "@/components/AmenityMapSection";
 import { WebPageJsonLd } from "@/components/WebPageJsonLd";
 import { FaqJsonLd } from "@/components/FaqJsonLd";
 
@@ -58,12 +59,12 @@ export default function HomePage() {
           Why Peccole Ranch?
         </h2>
         <p className="mt-4 text-gray-600 dark:text-gray-300">
-          Peccole Ranch is a master-planned community in Summerlin, one of Las Vegas’s most sought-after areas. 
-          Tree-lined streets, parks, top-rated schools, and easy access to Red Rock Canyon and the 215 make it ideal 
-          for families and professionals who want space and quality of life without leaving the valley.
+          Peccole Ranch is a master-planned community in Summerlin, one of Las Vegas’s most sought-after areas.
+          Tree-lined streets, parks, CCSD schools, and easy access to Red Rock Canyon and the 215 make it a strong fit
+          for buyers who want space and valley convenience.
         </p>
         <p className="mt-4 text-gray-600 dark:text-gray-300">
-          Whether you’re looking for a first home, an upgrade, or an investment property among Peccole Ranch homes, 
+          Whether you’re looking for a first home, an upgrade, or an investment property among Peccole Ranch homes,
           we focus on this neighborhood so we can give you hyperlocal market insight and a smooth experience.
         </p>
       </section>
@@ -94,6 +95,8 @@ export default function HomePage() {
           </Link>
         </p>
       </section>
+
+      <AmenityMapSection />
 
       <section className="mt-12 flex flex-wrap gap-6">
         <Link

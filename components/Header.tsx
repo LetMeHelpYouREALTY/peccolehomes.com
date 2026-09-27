@@ -14,6 +14,9 @@ export function Header() {
           <Link href="/peccole-ranch" className="hover:text-gray-900 dark:hover:text-white">
             Peccole Ranch
           </Link>
+          <Link href="/amenities" className="hover:text-gray-900 dark:hover:text-white">
+            Amenities
+          </Link>
           <Link href="/about" className="hover:text-gray-900 dark:hover:text-white">
             About
           </Link>

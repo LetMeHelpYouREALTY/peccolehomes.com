@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { nap, fullAddress, directionsUrl, googleReviewsUrl } from "@/lib/site";
 
 export function Footer() {
@@ -57,7 +58,18 @@ export function Footer() {
             />
           </div>
         </div>
-        <p className="mt-8 border-t border-gray-200 pt-8 text-center text-sm text-gray-500 dark:border-gray-800 dark:text-gray-400">
+        <nav className="mt-8 flex flex-wrap justify-center gap-4 text-sm text-gray-600 dark:text-gray-300">
+          <Link href="/amenities" className="hover:text-gray-900 dark:hover:text-white">
+            Nearby amenities
+          </Link>
+          <Link href="/peccole-ranch" className="hover:text-gray-900 dark:hover:text-white">
+            Peccole Ranch
+          </Link>
+          <Link href="/contact" className="hover:text-gray-900 dark:hover:text-white">
+            Contact
+          </Link>
+        </nav>
+        <p className="mt-6 border-t border-gray-200 pt-8 text-center text-sm text-gray-500 dark:border-gray-800 dark:text-gray-400">
           © 2025 Peccole Homes. Peccole Ranch, Las Vegas. © 2025 Berkshire Hathaway HomeServices Nevada Properties - Comprehensive Real Estate Services by Dr. Jan Duffy S.0197614. All rights reserved.{" "}
           <a href="/llms.txt" className="underline hover:no-underline" rel="alternate" type="text/plain" title="Site summary for AI/LLM crawlers">
             llms.txt

@@ -7,7 +7,7 @@ export function LocalBusinessJsonLd() {
     name: nap.businessName,
     description: `Peccole Ranch Homes and Las Vegas real estate. ${agent.name}, ${brokerage.name}. Local expertise for buyers and sellers in Peccole Ranch, Summerlin.`,
     url: site.baseUrl,
-    telephone: nap.phone,
+    telephone: nap.phoneSchema,
     address: {
       "@type": "PostalAddress",
       streetAddress: nap.street,

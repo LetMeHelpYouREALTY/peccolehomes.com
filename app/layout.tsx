@@ -30,6 +30,14 @@ export const metadata: Metadata = {
     siteName: site.name,
     locale: "en_US",
     type: "website",
+    images: [
+      {
+        url: "/opengraph-image",
+        width: 1200,
+        height: 630,
+        alt: "Peccole Ranch Homes — Las Vegas real estate in Summerlin",
+      },
+    ],
   },
   robots: {
     index: true,
@@ -40,6 +48,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Peccole Ranch Homes | Homes for Sale in Peccole Ranch, Las Vegas",
     description: "Peccole Ranch Homes and Las Vegas real estate. Local expertise for buyers and sellers in Peccole Ranch, Summerlin.",
+    images: ["/opengraph-image"],
   },
   ...(process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION && {
     other: { "google-site-verification": process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION },

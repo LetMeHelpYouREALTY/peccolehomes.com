@@ -4,7 +4,7 @@ import { agent, brokerage, geo, nap, site } from "@/lib/site";
 const faqItems = [
   {
     question: `What grocery stores are near ${community.name}?`,
-    answer: `Smith's Food and Drug at 9851 W Charleston Blvd sits in ${community.name}; Downtown Summerlin (Trader Joe's, Whole Foods, and more) is a short drive north on Rampart and Charleston.`,
+    answer: `Smith's Food and Drug at 9851 W Charleston Blvd sits in ${community.name}; Whole Foods Market at 2475 S Town Center Dr and Downtown Summerlin retail are a short drive north on Rampart and Charleston.`,
   },
   {
     question: `How far is ${community.name} from the Las Vegas Strip?`,
@@ -16,11 +16,11 @@ const faqItems = [
   },
   {
     question: `What parks and recreation are in ${community.name}?`,
-    answer: `The Peccole Ranch clubhouse at 9501 Red Hills Rd offers tennis, playgrounds, and community amenities, with walking trails and a disc golf course; Exploration Peak Park is nearby on W Azure Dr.`,
+    answer: `The Peccole Ranch clubhouse at 9501 Red Hills Rd offers tennis, playgrounds, and community amenities, with walking trails and a disc golf course; Exploration Peak Park is at 9700 S Buffalo Dr in the southwest valley.`,
   },
   {
-    question: `What schools serve ${community.name}?`,
-    answer: `Most homes are in Clark County School District (CCSD); assigned elementary, middle, and high schools depend on your street address — confirm at ccsd.net/zoning before you buy.`,
+    question: `Which CCSD schools are assigned to ${community.name} addresses?`,
+    answer: `Assignments depend on your street address. Verify with the CCSD Zoning Search at ccsd.net/zoning before you buy.`,
   },
   {
     question: `How far is ${community.name} from Harry Reid International Airport?`,
@@ -81,6 +81,7 @@ export function AmenitiesPageJsonLd() {
       item: {
         "@type": place.schemaType,
         name: place.name,
+        url: place.sourceUrl,
         address: {
           "@type": "PostalAddress",
           streetAddress: place.address.split(",")[0]?.trim(),

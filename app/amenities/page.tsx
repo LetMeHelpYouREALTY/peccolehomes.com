@@ -58,39 +58,38 @@ export default function AmenitiesPage() {
         <p className="text-gray-600 dark:text-gray-300">
           Inside {community.name}, the community association clubhouse at 9501 Red Hills Rd anchors
           tennis courts, playgrounds, and resident events, with tree-lined trails and a disc golf
-          course woven through the greenbelts. Exploration Peak Park at 9600 W Azure Dr adds open
-          space and trail access at the edge of the neighborhood.
+          course woven through the greenbelts. Exploration Peak Park at 9700 S Buffalo Dr adds open
+          space and trail access southwest of the neighborhood.
         </p>
 
         <h2 className="mt-10 text-2xl font-semibold text-gray-900 dark:text-white">Golf</h2>
         <p className="text-gray-600 dark:text-gray-300">
-          Public courses within a short drive include Angel Park Golf Club at 1001 S Rampart Blvd and
-          TPC Las Vegas at 1700 Village Center Cir in Summerlin. Canyon Gate Country Club also
-          borders portions of the Peccole Ranch area for residents seeking a private club option.
+          Public courses within a short drive include Angel Park Golf Club at 100 S Rampart Blvd and
+          TPC Las Vegas at 9851 Canyon Run Dr in Summerlin.
         </p>
 
         <h2 className="mt-10 text-2xl font-semibold text-gray-900 dark:text-white">Healthcare</h2>
         <p className="text-gray-600 dark:text-gray-300">
           Summerlin Hospital Medical Center (657 N Town Center Dr) and Centennial Hills Hospital
-          Medical Center (6900 N Durango Dr) are the primary full-service hospitals serving families
-          in {community.name}. Urgent care and physician offices cluster along Charleston, Rampart,
+          Medical Center (6900 N Durango Dr) are full-service hospitals serving residents in{" "}
+          {community.name}. Urgent care and physician offices cluster along Charleston, Rampart,
           and Town Center Drive.
         </p>
 
         <h2 className="mt-10 text-2xl font-semibold text-gray-900 dark:text-white">Shopping</h2>
         <p className="text-gray-600 dark:text-gray-300">
           Smith&apos;s at 9851 W Charleston Blvd covers weekly grocery runs in the neighborhood.
-          Downtown Summerlin brings department stores, specialty retail, Trader Joe&apos;s, and Whole
-          Foods Market. Boca Park Fashion Village adds boutiques and services along Rampart.
+          Whole Foods Market at 2475 S Town Center Dr and Downtown Summerlin bring department stores,
+          specialty retail, and additional grocers. Boca Park Fashion Village adds boutiques and
+          services along Rampart.
         </p>
 
         <h2 className="mt-10 text-2xl font-semibold text-gray-900 dark:text-white">Schools</h2>
         <p className="text-gray-600 dark:text-gray-300">
-          {community.name} is served by Clark County School District. Palo Verde High School at 333 S
-          Pavilion Center Dr is a well-known west-valley high school; elementary and middle assignments
-          vary by address. Always confirm your exact zoning at{" "}
+          {community.name} is served by Clark County School District. Which CCSD schools are assigned
+          to {community.name} addresses? Verify with the{" "}
           <a href="https://www.ccsd.net/zoning" className="underline underline-offset-2">
-            ccsd.net/zoning
+            CCSD Zoning Search
           </a>{" "}
           before you write an offer.
         </p>

@@ -57,6 +57,17 @@ export function Footer() {
             />
           </div>
         </div>
+        <nav className="mt-8 flex flex-wrap justify-center gap-x-6 gap-y-2 text-sm text-gray-600 dark:text-gray-300">
+          <a href="/sellers" className="hover:text-gray-900 dark:hover:text-white">
+            Sell your Peccole Ranch home
+          </a>
+          <a href="/peccole-ranch" className="hover:text-gray-900 dark:hover:text-white">
+            Peccole Ranch guide
+          </a>
+          <a href="/contact" className="hover:text-gray-900 dark:hover:text-white">
+            Contact
+          </a>
+        </nav>
         <p className="mt-8 border-t border-gray-200 pt-8 text-center text-sm text-gray-500 dark:border-gray-800 dark:text-gray-400">
           © 2025 Peccole Homes. Peccole Ranch, Las Vegas. © 2025 Berkshire Hathaway HomeServices Nevada Properties - Comprehensive Real Estate Services by Dr. Jan Duffy S.0197614. All rights reserved.{" "}
           <a href="/llms.txt" className="underline hover:no-underline" rel="alternate" type="text/plain" title="Site summary for AI/LLM crawlers">

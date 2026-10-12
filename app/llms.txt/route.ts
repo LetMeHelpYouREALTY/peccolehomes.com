@@ -40,6 +40,7 @@ Peccole Ranch is a master-planned community in Summerlin, Las Vegas, Nevada. It 
 
 - [Home — Peccole Ranch Homes for Sale](${site.baseUrl}/)
 - [Peccole Ranch Neighborhood](${site.baseUrl}/peccole-ranch)
+- [Sell in Peccole Ranch](${site.baseUrl}/sellers)
 - [Contact](${site.baseUrl}/contact)
 - [About](${site.baseUrl}/about)
 - [FAQ — Peccole Ranch Homes](${site.baseUrl}/faq)

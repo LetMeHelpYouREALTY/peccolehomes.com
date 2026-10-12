@@ -6,17 +6,21 @@ const base = site.baseUrl;
 export default function sitemap(): MetadataRoute.Sitemap {
   const routes = [
     { path: "", priority: 1, changeFrequency: "weekly" as const },
-    { path: "/about", priority: 0.8, changeFrequency: "monthly" as const },
-    { path: "/contact", priority: 0.8, changeFrequency: "monthly" as const },
-    { path: "/peccole-ranch", priority: 0.9, changeFrequency: "weekly" as const },
+    { path: "/buyers", priority: 0.9, changeFrequency: "weekly" as const },
     { path: "/sellers", priority: 0.9, changeFrequency: "weekly" as const },
-    { path: "/faq", priority: 0.7, changeFrequency: "monthly" as const },
-    { path: "/llms.txt", priority: 0.5, changeFrequency: "monthly" as const },
+    { path: "/market", priority: 0.8, changeFrequency: "weekly" as const },
+    { path: "/peccole-ranch", priority: 0.8, changeFrequency: "monthly" as const },
+    { path: "/golf-and-gated", priority: 0.7, changeFrequency: "monthly" as const },
+    { path: "/new-construction", priority: 0.7, changeFrequency: "monthly" as const },
+    { path: "/about", priority: 0.6, changeFrequency: "monthly" as const },
+    { path: "/contact", priority: 0.7, changeFrequency: "monthly" as const },
+    { path: "/faq", priority: 0.6, changeFrequency: "monthly" as const },
+    { path: "/llms.txt", priority: 0.4, changeFrequency: "monthly" as const },
   ];
 
   return routes.map(({ path, priority, changeFrequency }) => ({
     url: path ? `${base}${path}` : base,
-    lastModified: new Date(),
+    lastModified: new Date("2026-10-12"),
     changeFrequency,
     priority,
   }));

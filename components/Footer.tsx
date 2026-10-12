@@ -1,79 +1,69 @@
-import { nap, fullAddress, directionsUrl, googleReviewsUrl } from "@/lib/site";
+import Link from "next/link";
+import { agent, brokerage, directionsUrl, fullAddress, nap } from "@/lib/site";
+
+const links = [
+  { href: "/sellers", label: "Sell my Peccole Ranch home" },
+  { href: "/buyers", label: "Buy in Peccole Ranch" },
+  { href: "/market", label: "Peccole Ranch market report" },
+  { href: "/peccole-ranch", label: "Peccole Ranch community guide" },
+  { href: "/faq", label: "Peccole Ranch questions" },
+  { href: "/contact", label: "Contact" },
+] as const;
 
 export function Footer() {
-  const mapEmbedUrl = `https://www.google.com/maps?q=${encodeURIComponent(fullAddress)}&output=embed`;
-
   return (
-    <footer className="border-t border-gray-200 bg-gray-50 dark:border-gray-800 dark:bg-gray-900">
-      <div className="mx-auto max-w-6xl px-4 py-12">
-        <div className="grid gap-8 md:grid-cols-2">
-          <div>
-            <h3 className="text-sm font-semibold uppercase tracking-wider text-gray-500 dark:text-gray-400">
-              Visit us
-            </h3>
-            <address className="mt-2 not-italic text-gray-700 dark:text-gray-300">
-              <span className="font-medium">{nap.businessName}</span>
-              <br />
-              {nap.street}
-              <br />
-              {nap.city}, {nap.state} {nap.zip}
-            </address>
-            <div className="mt-4 flex flex-wrap gap-3">
-              <a
-                href={`tel:${nap.phoneTel}`}
-                className="inline-flex items-center rounded-md bg-gray-800 px-4 py-2 text-sm font-medium text-white hover:bg-gray-700 dark:bg-gray-700 dark:hover:bg-gray-600"
-              >
-                Call
-              </a>
-              <a
-                href={directionsUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center rounded-md border border-gray-300 bg-white px-4 py-2 text-sm font-medium text-gray-700 hover:bg-gray-50 dark:border-gray-600 dark:bg-gray-800 dark:text-gray-200 dark:hover:bg-gray-700"
-              >
-                Directions
-              </a>
-              <a
-                href={googleReviewsUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center rounded-md border border-gray-300 bg-white px-4 py-2 text-sm font-medium text-gray-700 hover:bg-gray-50 dark:border-gray-600 dark:bg-gray-800 dark:text-gray-200 dark:hover:bg-gray-700"
-              >
-                View Google Reviews
-              </a>
-            </div>
-          </div>
-          <div className="h-64 min-h-[200px] overflow-hidden rounded-lg">
-            <iframe
-              title="Office location map"
-              src={mapEmbedUrl}
-              width="100%"
-              height="100%"
-              style={{ border: 0 }}
-              allowFullScreen
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-              className="h-full w-full"
-            />
-          </div>
+    <footer className="border-t border-line/15 bg-bg">
+      <div className="mx-auto grid max-w-6xl gap-10 px-4 py-14 md:grid-cols-2">
+        <div>
+          <p className="text-[0.72rem] uppercase tracking-[0.2em] text-stone">Visit</p>
+          <address className="mt-4 not-italic text-ink">
+            <span className="font-medium">{nap.businessName}</span>
+            <br />
+            {nap.street}
+            <br />
+            {nap.city}, {nap.state} {nap.zip}
+          </address>
+          <p className="mt-4">
+            <a href={`tel:${nap.phoneTel}`} className="text-ink">
+              Call {nap.phone}
+            </a>
+          </p>
+          <p className="mt-3">
+            <a href={directionsUrl} className="text-sm text-muted underline underline-offset-4">
+              Directions to {fullAddress}
+            </a>
+          </p>
         </div>
-        <nav className="mt-8 flex flex-wrap justify-center gap-x-6 gap-y-2 text-sm text-gray-600 dark:text-gray-300">
-          <a href="/sellers" className="hover:text-gray-900 dark:hover:text-white">
-            Sell your Peccole Ranch home
-          </a>
-          <a href="/peccole-ranch" className="hover:text-gray-900 dark:hover:text-white">
-            Peccole Ranch guide
-          </a>
-          <a href="/contact" className="hover:text-gray-900 dark:hover:text-white">
-            Contact
-          </a>
+        <nav aria-label="Footer">
+          <ul className="space-y-3 text-sm text-muted">
+            {links.map((link) => (
+              <li key={link.href}>
+                <Link href={link.href} className="hover:text-ink">
+                  {link.label}
+                </Link>
+              </li>
+            ))}
+          </ul>
         </nav>
-        <p className="mt-8 border-t border-gray-200 pt-8 text-center text-sm text-gray-500 dark:border-gray-800 dark:text-gray-400">
-          © 2025 Peccole Homes. Peccole Ranch, Las Vegas. © 2025 Berkshire Hathaway HomeServices Nevada Properties - Comprehensive Real Estate Services by Dr. Jan Duffy S.0197614. All rights reserved.{" "}
-          <a href="/llms.txt" className="underline hover:no-underline" rel="alternate" type="text/plain" title="Site summary for AI/LLM crawlers">
-            llms.txt
-          </a>
-        </p>
+      </div>
+      <div className="border-t border-line/15">
+        <div className="mx-auto max-w-6xl space-y-3 px-4 py-8 text-sm text-muted">
+          <p>{brokerage.name}</p>
+          <p>
+            {agent.name}, {agent.credential} | Nevada License {agent.license}
+          </p>
+          <p>Equal Housing Opportunity.</p>
+          <p>
+            Listing information is deemed reliable but is not guaranteed. Photographs on this site are
+            illustrative. They are not listings and they do not show a specific address.
+          </p>
+          <p>
+            © {new Date().getFullYear()} {nap.businessName}.{" "}
+            <a href="/llms.txt" className="underline underline-offset-4">
+              llms.txt
+            </a>
+          </p>
+        </div>
       </div>
     </footer>
   );

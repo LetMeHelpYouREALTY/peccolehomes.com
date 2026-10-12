@@ -1,13 +1,15 @@
-import { site, nap, fullAddress, geo, agent, brokerage } from "@/lib/site";
+import { agent, area, brokerage, fullAddress, geo, nap, site } from "@/lib/site";
 
 export function LocalBusinessJsonLd() {
   const schema = {
     "@context": "https://schema.org",
-    "@type": "RealEstateAgent",
+    "@type": ["RealEstateAgent", "LocalBusiness"],
     name: nap.businessName,
-    description: `Peccole Ranch Homes and Las Vegas real estate. ${agent.name}, ${brokerage.name}. Local expertise for buyers and sellers in Peccole Ranch, Summerlin.`,
+    description:
+      "Peccole Ranch homes for sale and seller valuations in west Las Vegas, beside Summerlin.",
     url: site.baseUrl,
     telephone: nap.phoneSchema,
+    image: `${site.baseUrl}/opengraph-image`,
     address: {
       "@type": "PostalAddress",
       streetAddress: nap.street,
@@ -28,18 +30,34 @@ export function LocalBusinessJsonLd() {
     employee: {
       "@type": "Person",
       name: agent.name,
-      jobTitle: "Real Estate Agent",
+      jobTitle: agent.credential,
       identifier: agent.license,
     },
-    areaServed: {
-      "@type": "Place",
-      name: "Peccole Ranch",
-      address: {
-        "@type": "PostalAddress",
-        addressLocality: "Las Vegas",
-        addressRegion: "NV",
+    areaServed: [
+      {
+        "@type": "Place",
+        name: area.name,
+        address: {
+          "@type": "PostalAddress",
+          addressLocality: area.city,
+          addressRegion: area.state,
+          postalCode: area.primaryZip,
+          addressCountry: "US",
+        },
       },
-    },
+      ...area.zips.map((zip) => ({
+        "@type": "AdministrativeArea",
+        name: `ZIP ${zip}`,
+        address: {
+          "@type": "PostalAddress",
+          addressLocality: "Las Vegas",
+          addressRegion: "NV",
+          postalCode: zip,
+          addressCountry: "US",
+        },
+      })),
+    ],
+    knowsAbout: [fullAddress, area.name, "ZIP 89117", "ZIP 89145"],
   };
 
   return (

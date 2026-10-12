@@ -2,19 +2,45 @@
 @tailwind components;
 @tailwind utilities;
 
+/*
+ * Desert-stone accent sampled from Red Rock sandstone, restrained against
+ * charcoal and warm ivory. Pairs below were checked at WCAG AA (4.5:1) or better.
+ * Light: ink #1C1916 on ivory #F6F1E8 (15.55), muted #4A4238 (8.77), stone #6E5430 (6.28).
+ * Dark: ivory #F4EFE6 on #12100E (16.58), muted #D2C8BA (11.49), stone #D8C4A0 (11.14).
+ */
 :root {
-  --foreground: #0a0a0a;
-  --background: #fafafa;
+  --bg: 246 241 232;
+  --ink: 28 25 22;
+  --muted: 74 66 56;
+  --stone: 110 84 48;
+  --line: 28 25 22;
+  --hero: 18 16 14;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --foreground: #fafafa;
-    --background: #0a0a0a;
+    --bg: 18 16 14;
+    --ink: 244 239 230;
+    --muted: 210 200 186;
+    --stone: 216 196 160;
+    --line: 244 239 230;
+    --hero: 12 11 10;
   }
 }
 
 body {
-  color: var(--foreground);
-  background: var(--background);
+  background: rgb(var(--bg));
+  color: rgb(var(--ink));
+  font-family: var(--font-sans), sans-serif;
+  line-height: 1.7;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
 }

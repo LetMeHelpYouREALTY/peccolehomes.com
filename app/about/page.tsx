@@ -1,48 +1,64 @@
-import type { Metadata } from "next";
-import { nap, site, agent, brokerage } from "@/lib/site";
+import Link from "next/link";
 import { WebPageJsonLd } from "@/components/WebPageJsonLd";
 import { BreadcrumbJsonLd } from "@/components/BreadcrumbJsonLd";
+import { agent, fullAddress, nap } from "@/lib/site";
+import { pageMeta } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "About Us",
-  description: `About ${nap.businessName} — ${agent.name}, ${brokerage.name}. Peccole Ranch Homes and Las Vegas real estate. Local knowledge, trusted service.`,
-  alternates: {
-    canonical: "/about",
-  },
-};
+const title = "About Dr. Jan Duffy | Peccole Ranch";
+const description =
+  "Dr. Jan Duffy, REALTOR®, Nevada license S.0197614.LLC, serves Peccole Ranch buyers and sellers at 9501 Red Hills Rd.";
+const answer =
+  "Dr. Jan Duffy, REALTOR®, holds Nevada license S.0197614.LLC and works with Peccole Ranch buyers and sellers. This site covers homes for sale, valuations, and the September 2026 market record. The published address is 9501 Red Hills Rd, Las Vegas, NV 89117. Call (702) 500-0810.";
+
+export async function generateMetadata() {
+  return pageMeta({ title, description, path: "/about" });
+}
 
 export default function AboutPage() {
   return (
-    <div className="mx-auto max-w-4xl px-4 py-16">
-      <WebPageJsonLd
-        name={`About ${nap.businessName}`}
-        description={`${nap.businessName} — ${agent.name}, ${agent.license}, with ${brokerage.name}. Peccole Ranch Homes and Summerlin, Las Vegas. Office: ${nap.street}, ${nap.city}, ${nap.state} ${nap.zip}.`}
-        path="/about"
-      />
+    <div className="mx-auto max-w-6xl px-4 py-16">
+      <WebPageJsonLd name={title} description={answer} path="/about" />
       <BreadcrumbJsonLd
         items={[
           { name: "Home", path: "/" },
           { name: "About" },
         ]}
       />
-      <h1 className="text-4xl font-bold tracking-tight text-gray-900 dark:text-white">
-        About {nap.businessName}
+      <p className="text-[0.72rem] uppercase tracking-[0.18em] text-stone">
+        <Link href="/" className="hover:text-ink">
+          Home
+        </Link>
+        <span aria-hidden="true"> / </span>
+        About
+      </p>
+      <h1 className="mt-4 font-display text-5xl font-medium leading-[1.05] sm:text-6xl">
+        About Dr. Jan Duffy
       </h1>
-      <p className="mt-6 text-lg text-gray-600 dark:text-gray-300" data-aeo-answer>
-        {nap.businessName} is led by {agent.name} (Nevada license {agent.license}) with {brokerage.name}, focused on Peccole Ranch Homes and the greater Summerlin area in Las Vegas. Office: {nap.street}, {nap.city}, {nap.state} {nap.zip}.
+      <p className="mt-6 max-w-2xl text-lg text-muted" data-aeo-answer>
+        {answer}
       </p>
-      <p className="mt-4 text-gray-600 dark:text-gray-300">
-        We focus on Peccole Ranch and the greater Summerlin area so we can offer real local expertise— 
-        from market trends and neighborhood fit to schools and HOA details. Whether you’re buying or selling 
-        in Peccole Ranch, Las Vegas, we’re here to help with a straightforward, professional experience.
-      </p>
-      <p className="mt-4 text-gray-600 dark:text-gray-300">
-        Our office is at {nap.street}, {nap.city}, {nap.state} {nap.zip}. 
-        Stop by, call, or reach out through our contact page.
-      </p>
-      <p className="mt-8 text-sm text-gray-500 dark:text-gray-400">
-        {nap.businessName} — Peccole Ranch real estate. {site.baseUrl}
-      </p>
+      <section className="mt-12 max-w-3xl" aria-labelledby="practice-heading">
+        <h2 id="practice-heading" className="font-display text-4xl font-medium">
+          This practice, in this place
+        </h2>
+        <p className="mt-4 text-muted">
+          {agent.name}, {agent.credential}, Nevada license {agent.license}.
+        </p>
+        <p className="mt-4 text-muted">
+          The work on this site is Peccole Ranch: listings, a valuation booking, and dated local figures.
+        </p>
+        <p className="mt-4 text-muted">
+          Sales totals and personal history are not stated here unless a source on the market page documents them.
+        </p>
+        <p className="mt-4 text-muted">
+          Office address: {fullAddress}. Phone: {nap.phone}.
+        </p>
+        <p className="mt-8">
+          <Link href="/contact" className="text-[0.72rem] uppercase tracking-[0.18em] underline underline-offset-4">
+            Contact Dr. Jan Duffy
+          </Link>
+        </p>
+      </section>
     </div>
   );
 }

@@ -3,19 +3,18 @@ import { site } from "@/lib/site";
 
 export default function manifest(): MetadataRoute.Manifest {
   return {
-    name: site.name,
+    name: "Peccole Ranch homes for sale",
     short_name: site.name,
     description: site.shortDescription,
     start_url: "/",
     display: "standalone",
-    background_color: "#fafafa",
-    theme_color: "#0a0a0a",
+    background_color: "#F6F1E8",
+    theme_color: "#1C1916",
     icons: [
       {
-        src: "/favicon.ico",
-        sizes: "any",
-        type: "image/x-icon",
-        purpose: "any",
+        src: "/icon",
+        sizes: "32x32",
+        type: "image/png",
       },
     ],
   };

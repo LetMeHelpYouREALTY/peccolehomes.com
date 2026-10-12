@@ -1,81 +1,176 @@
-import type { Metadata } from "next";
 import Link from "next/link";
+import { PlaceJsonLd } from "@/components/PlaceJsonLd";
 import { WebPageJsonLd } from "@/components/WebPageJsonLd";
 import { BreadcrumbJsonLd } from "@/components/BreadcrumbJsonLd";
-import { agent, brokerage } from "@/lib/site";
+import { FaqJsonLd } from "@/components/FaqJsonLd";
+import { EditorialImage } from "@/components/EditorialImage";
+import { FaqList } from "@/components/FaqList";
+import { communityFaqs } from "@/lib/faqs";
+import { marketSources } from "@/lib/market";
+import { ccsdLocatorUrl } from "@/lib/site";
+import { pageMeta } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "Peccole Ranch Homes | Las Vegas Master-Planned Community",
-  description:
-    "Peccole Ranch Homes in Summerlin, Las Vegas: parks, schools, Red Rock access, and family-friendly living. Your guide from Dr. Jan Duffy, Berkshire Hathaway HomeServices Nevada Properties.",
-  alternates: {
-    canonical: "/peccole-ranch",
-  },
-};
+const title = "Peccole Ranch Community Guide | Las Vegas";
+const description =
+  "Peccole Ranch is a west Las Vegas master plan beside Summerlin, mainly ZIP 89117, with paseos, a clubhouse, and mixed gates.";
+const answer =
+  "Peccole Ranch is a master-planned community in west Las Vegas, beside Summerlin, primarily ZIP 89117. The Peccole family launched it in 1989 on former ranch land. The association lists paseos, a clubhouse, tennis, and disc golf. Gates apply only inside some sub-associations.";
+
+export async function generateMetadata() {
+  return pageMeta({ title, description, path: "/peccole-ranch" });
+}
 
 export default function PeccoleRanchPage() {
   return (
-    <div className="mx-auto max-w-4xl px-4 py-16">
-      <WebPageJsonLd
-        name="Peccole Ranch Homes | Las Vegas Master-Planned Community"
-        description={`Peccole Ranch is a master-planned community in Summerlin, Las Vegas, Nevada, with parks, top schools, and access to Red Rock Canyon and the 215. Guide from ${agent.name}, ${brokerage.name}.`}
-        path="/peccole-ranch"
-      />
+    <div className="mx-auto max-w-6xl px-4 py-16">
+      <WebPageJsonLd name={title} description={answer} path="/peccole-ranch" />
+      <PlaceJsonLd />
       <BreadcrumbJsonLd
         items={[
           { name: "Home", path: "/" },
           { name: "Peccole Ranch" },
         ]}
       />
-      <h1 className="text-4xl font-bold tracking-tight text-gray-900 dark:text-white">
-        Peccole Ranch Homes & Community
+      <FaqJsonLd faqs={communityFaqs} />
+
+      <p className="text-[0.72rem] uppercase tracking-[0.18em] text-stone">
+        <Link href="/" className="hover:text-ink">
+          Home
+        </Link>
+        <span aria-hidden="true"> / </span>
+        Community
+      </p>
+      <h1 className="mt-4 max-w-4xl font-display text-5xl font-medium leading-[1.05] sm:text-6xl">
+        Peccole Ranch community guide
       </h1>
-      <p className="mt-4 text-lg text-gray-600 dark:text-gray-300" data-aeo-answer>
-        Peccole Ranch is a master-planned community in Summerlin, Las Vegas, Nevada, known for tree-lined streets, top schools, and family-friendly living, with easy access to Red Rock Canyon and the 215.
-      </p>
-      <p className="mt-2 text-gray-600 dark:text-gray-300">
-        Looking for Peccole Ranch homes? Search listings above or contact us for current availability and market insight.
+      <p className="mt-6 max-w-2xl text-lg text-muted" data-aeo-answer>
+        {answer}
       </p>
 
-      <section className="mt-10 prose prose-gray dark:prose-invert max-w-none">
-        <h2 className="text-2xl font-semibold text-gray-900 dark:text-white">
-          Location & lifestyle
+      <EditorialImage
+        src="/images/peccole-ranch/paseos-and-clubhouse.webp"
+        alt="Clubhouse, empty tennis court, and amphitheater lawn at sunset, illustrating Peccole Ranch paseos"
+        ratio="16/9"
+        priority
+      />
+
+      <section aria-labelledby="place-heading">
+        <h2 id="place-heading" className="font-display text-4xl font-medium">
+          Where the master plan sits
         </h2>
-        <p className="text-gray-600 dark:text-gray-300">
-          Peccole Ranch sits in Summerlin, one of the most desirable areas in the Las Vegas valley. 
-          Residents enjoy parks, trails, community pools, and a strong sense of neighborhood. 
-          The area is known for good schools and a family-friendly feel while still being a short drive from the Strip and downtown.
+        <p className="mt-4 max-w-3xl text-muted">
+          Sources agree on west Las Vegas, beside Summerlin, and ZIP 89117 as the main code.
         </p>
-
-        <h2 className="mt-8 text-2xl font-semibold text-gray-900 dark:text-white">
-          Why buyers choose Peccole Ranch
-        </h2>
-        <ul className="list-disc pl-6 text-gray-600 dark:text-gray-300">
-          <li>Strong schools and family-oriented amenities</li>
-          <li>Parks, walking paths, and outdoor recreation</li>
-          <li>Convenient access to the 215 and Red Rock Canyon</li>
-          <li>Variety of single-family homes and floor plans</li>
-          <li>Established HOA communities with maintained common areas</li>
-        </ul>
-
-        <h2 className="mt-8 text-2xl font-semibold text-gray-900 dark:text-white">
-          Peccole Ranch Homes for Sale
-        </h2>
-        <p className="text-gray-600 dark:text-gray-300">
-          Whether you’re looking for your first home, an upgrade, or an investment in Peccole Ranch, 
-          we can help you find the right fit and guide you through the market. 
-          <Link href="/contact" className="font-medium underline underline-offset-4">
-            Contact us
-          </Link>{" "}
-          for current listings and local market insight.
+        <p className="mt-4 max-w-3xl text-muted">
+          A guide updated September 19, 2026 also names ZIP 89145 for part of the community.
+        </p>
+        <p className="mt-4 max-w-3xl text-muted">
+          That guide boxes the plan with Sahara, Charleston, Durango, and Buffalo.
+        </p>
+        <p className="mt-4 max-w-3xl text-muted">
+          Another community page uses Charleston, Fort Apache, Sahara, and Hualapai. Those boxes do not match.
+        </p>
+        <p className="mt-4 max-w-3xl text-muted">
+          Use the parcel, not a blog map, when the lot’s edge matters.
+        </p>
+        <p className="mt-4 text-sm text-muted">
+          Sources:{" "}
+          <a href={marketSources.nregPeccole} className="underline underline-offset-4">
+            guide updated September 19, 2026
+          </a>
+          {" · "}
+          <a href={marketSources.sandy} className="underline underline-offset-4">
+            community page
+          </a>
+          {" · "}
+          <a href={marketSources.zipData} className="underline underline-offset-4">
+            ZIP page dated October 2026
+          </a>
+          .
         </p>
       </section>
 
-      <p className="mt-10">
-        <Link href="/" className="font-medium text-gray-900 underline underline-offset-4 dark:text-white">
-          Back to home
-        </Link>
-      </p>
+      <section className="mt-16" aria-labelledby="amenities-heading">
+        <h2 id="amenities-heading" className="font-display text-4xl font-medium">
+          Amenities the association names
+        </h2>
+        <p className="mt-4 max-w-3xl text-muted">
+          The amenities page lists a clubhouse, playground, tennis courts, amphitheater, and volleyball.
+        </p>
+        <p className="mt-4 max-w-3xl text-muted">
+          It also lists bocce, a disc golf course, and outdoor exercise equipment along the channels.
+        </p>
+        <p className="mt-4 max-w-3xl text-muted">
+          Tennis is posted from 6:00 a.m. to 11:00 p.m. for registered residents. Pickleball is not allowed on those courts.
+        </p>
+        <p className="mt-4 max-w-3xl text-muted">
+          Clubhouse rental is listed for homeowners on weekends, at $250 plus a $300 deposit.
+        </p>
+        <p className="mt-4 text-sm text-muted">
+          Pages reviewed October 12, 2026:{" "}
+          <a href={marketSources.associationAmenities} className="underline underline-offset-4">
+            amenities map
+          </a>
+          {" · "}
+          <a href={marketSources.associationTennis} className="underline underline-offset-4">
+            tennis courts
+          </a>
+          {" · "}
+          <a href={marketSources.associationClubhouse} className="underline underline-offset-4">
+            clubhouse rental
+          </a>
+          .
+        </p>
+      </section>
+
+      <section className="mt-16" aria-labelledby="commute-heading">
+        <h2 id="commute-heading" className="font-display text-4xl font-medium">
+          Commute times from a September 2026 guide
+        </h2>
+        <ul className="mt-6 max-w-3xl space-y-3 text-muted">
+          <li>Las Vegas Strip, 7 to 9 a.m., via Flamingo or Sahara: about 15 to 20 minutes.</li>
+          <li>Harry Reid International Airport via I-215: about 18 to 22 minutes.</li>
+          <li>Downtown Summerlin: about 8 to 12 minutes west.</li>
+        </ul>
+        <p className="mt-4 max-w-3xl text-sm text-muted">
+          Source:{" "}
+          <a href={marketSources.nregPeccole} className="underline underline-offset-4">
+            Peccole Ranch guide, updated September 19, 2026
+          </a>
+          . A named roster of major employers inside the community was not found. Drive the route at
+          the hour you would actually leave.
+        </p>
+      </section>
+
+      <section className="mt-16" aria-labelledby="schools-heading">
+        <h2 id="schools-heading" className="font-display text-4xl font-medium">
+          School names, by source
+        </h2>
+        <p className="mt-4 max-w-3xl text-muted">
+          Clark County School District assigns each address. Names below are citations, not a zone map.
+        </p>
+        <ul className="mt-6 max-w-3xl list-disc space-y-2 pl-5 text-muted">
+          <li>Ober Elementary, also written D’Vorre and Hall Ober Elementary</li>
+          <li>William and Mary Scherkenbach Elementary</li>
+          <li>Walter Johnson Junior High</li>
+          <li>Lawrence and Heidi Canarelli Middle School</li>
+          <li>Palo Verde High School</li>
+          <li>Bonanza High School</li>
+        </ul>
+        <p className="mt-4 max-w-3xl text-muted">
+          Private and charter names cited within a short drive include The Meadows School, Bishop Gorman High School, Mountain View Christian School, and Doral Academy Pebble Campus.
+        </p>
+        <p className="mt-6">
+          <a
+            href={ccsdLocatorUrl}
+            className="text-[0.72rem] uppercase tracking-[0.18em] underline underline-offset-4"
+          >
+            Open the Clark County School District locator
+          </a>
+        </p>
+      </section>
+
+      <FaqList faqs={communityFaqs} heading="Community questions" id="community-faq-heading" />
     </div>
   );
 }

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Script from "next/script";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import { site } from "@/lib/site";
 import { LocalBusinessJsonLd } from "@/components/JsonLd";
 import { WebSiteJsonLd } from "@/components/WebSiteJsonLd";
@@ -80,6 +81,7 @@ export default function RootLayout({
         <main className="min-h-screen">{children}</main>
         <RealScoutWidget />
         <Footer />
+        <SpeedInsights />
       </body>
     </html>
   );

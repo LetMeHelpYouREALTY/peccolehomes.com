@@ -23,13 +23,14 @@ export default function GolfAndGatedPage() {
     <div className="mx-auto max-w-6xl px-4 py-16">
       <WebPageJsonLd name={title} description={answer} path="/golf-and-gated" />
       <BreadcrumbJsonLd
+        path="/golf-and-gated"
         items={[
           { name: "Home", path: "/" },
           { name: "Buy", path: "/buyers" },
           { name: "Golf and gated" },
         ]}
       />
-      <FaqJsonLd faqs={golfFaqs} />
+      <FaqJsonLd faqs={golfFaqs} path="/golf-and-gated" />
 
       <p className="text-[0.72rem] uppercase tracking-[0.18em] text-stone">
         <Link href="/buyers" className="hover:text-ink">
@@ -41,7 +42,7 @@ export default function GolfAndGatedPage() {
       <h1 className="mt-4 max-w-4xl font-display text-5xl font-medium leading-[1.05] sm:text-6xl">
         Queensridge and Canyon Gate homes
       </h1>
-      <p className="mt-6 max-w-2xl text-lg text-muted" data-aeo-answer>
+      <p className="mt-6 max-w-2xl text-lg text-muted" id="answer" data-aeo-answer>
         {answer}
       </p>
 

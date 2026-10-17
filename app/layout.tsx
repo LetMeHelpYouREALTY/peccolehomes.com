@@ -3,7 +3,6 @@ import { Cormorant_Garamond, Manrope } from "next/font/google";
 import Script from "next/script";
 import { site } from "@/lib/site";
 import { LocalBusinessJsonLd } from "@/components/JsonLd";
-import { WebSiteJsonLd } from "@/components/WebSiteJsonLd";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import "./globals.css";
@@ -55,7 +54,6 @@ export default function RootLayout({
           title="Site summary for AI and LLM crawlers"
         />
         <LocalBusinessJsonLd />
-        <WebSiteJsonLd />
         <Script
           src="https://em.realscout.com/widgets/realscout-web-components.umd.js"
           type="module"

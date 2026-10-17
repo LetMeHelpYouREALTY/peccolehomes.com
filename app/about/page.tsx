@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { WebPageJsonLd } from "@/components/WebPageJsonLd";
 import { BreadcrumbJsonLd } from "@/components/BreadcrumbJsonLd";
+import { entityIds } from "@/lib/entity";
 import { agent, fullAddress, nap } from "@/lib/site";
 import { pageMeta } from "@/lib/seo";
 
@@ -17,8 +18,14 @@ export async function generateMetadata() {
 export default function AboutPage() {
   return (
     <div className="mx-auto max-w-6xl px-4 py-16">
-      <WebPageJsonLd name={title} description={answer} path="/about" />
+      <WebPageJsonLd
+        name={title}
+        description={answer}
+        path="/about"
+        aboutId={entityIds.person}
+      />
       <BreadcrumbJsonLd
+        path="/about"
         items={[
           { name: "Home", path: "/" },
           { name: "About" },
@@ -34,7 +41,7 @@ export default function AboutPage() {
       <h1 className="mt-4 font-display text-5xl font-medium leading-[1.05] sm:text-6xl">
         About Dr. Jan Duffy
       </h1>
-      <p className="mt-6 max-w-2xl text-lg text-muted" data-aeo-answer>
+      <p className="mt-6 max-w-2xl text-lg text-muted" id="answer" data-aeo-answer>
         {answer}
       </p>
       <section className="mt-12 max-w-3xl" aria-labelledby="practice-heading">

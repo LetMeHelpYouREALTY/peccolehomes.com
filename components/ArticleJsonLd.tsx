@@ -1,4 +1,5 @@
-import { agent, site } from "@/lib/site";
+import { entityIds, pageUpdated, webpageId } from "@/lib/entity";
+import { site } from "@/lib/site";
 
 type ArticleJsonLdProps = {
   headline: string;
@@ -7,27 +8,20 @@ type ArticleJsonLdProps = {
 };
 
 export function ArticleJsonLd({ headline, description, path }: ArticleJsonLdProps) {
+  const published = pageUpdated["/market"];
   const schema = {
     "@context": "https://schema.org",
     "@type": "Article",
+    "@id": `${site.baseUrl}${path}#article`,
     headline,
     description,
-    datePublished: "2026-10-12",
-    dateModified: "2026-10-12",
-    author: {
-      "@type": "Person",
-      name: agent.name,
-    },
-    publisher: {
-      "@type": "Organization",
-      name: site.name,
-      url: site.baseUrl,
-    },
-    mainEntityOfPage: `${site.baseUrl}${path}`,
-    about: {
-      "@type": "Place",
-      name: "Peccole Ranch",
-    },
+    datePublished: published,
+    dateModified: published,
+    author: { "@id": entityIds.person },
+    publisher: { "@id": entityIds.business },
+    mainEntityOfPage: { "@id": webpageId(path) },
+    about: { "@id": entityIds.place },
+    image: `${site.baseUrl}/opengraph-image`,
   };
 
   return (

@@ -21,12 +21,13 @@ export default function FaqPage() {
     <div className="mx-auto max-w-6xl px-4 py-16">
       <WebPageJsonLd name={title} description={answer} path="/faq" />
       <BreadcrumbJsonLd
+        path="/faq"
         items={[
           { name: "Home", path: "/" },
           { name: "FAQ" },
         ]}
       />
-      <FaqJsonLd faqs={allFaqs} />
+      <FaqJsonLd faqs={allFaqs} path="/faq" />
       <p className="text-[0.72rem] uppercase tracking-[0.18em] text-stone">
         <Link href="/" className="hover:text-ink">
           Home
@@ -37,7 +38,7 @@ export default function FaqPage() {
       <h1 className="mt-4 font-display text-5xl font-medium leading-[1.05] sm:text-6xl">
         Peccole Ranch questions
       </h1>
-      <p className="mt-6 max-w-2xl text-lg text-muted" data-aeo-answer>
+      <p className="mt-6 max-w-2xl text-lg text-muted" id="answer" data-aeo-answer>
         {answer}
       </p>
       <FaqList faqs={allFaqs} heading="All questions on this site" id="all-faq-heading" />

@@ -8,6 +8,7 @@ import { FaqList } from "@/components/FaqList";
 import { communityFaqs } from "@/lib/faqs";
 import { marketSources } from "@/lib/market";
 import { ccsdLocatorUrl } from "@/lib/site";
+import { entityIds } from "@/lib/entity";
 import { pageMeta } from "@/lib/seo";
 
 const title = "Peccole Ranch Community Guide | Las Vegas";
@@ -23,15 +24,21 @@ export async function generateMetadata() {
 export default function PeccoleRanchPage() {
   return (
     <div className="mx-auto max-w-6xl px-4 py-16">
-      <WebPageJsonLd name={title} description={answer} path="/peccole-ranch" />
+      <WebPageJsonLd
+        name={title}
+        description={answer}
+        path="/peccole-ranch"
+        aboutId={entityIds.place}
+      />
       <PlaceJsonLd />
       <BreadcrumbJsonLd
+        path="/peccole-ranch"
         items={[
           { name: "Home", path: "/" },
           { name: "Peccole Ranch" },
         ]}
       />
-      <FaqJsonLd faqs={communityFaqs} />
+      <FaqJsonLd faqs={communityFaqs} path="/peccole-ranch" />
 
       <p className="text-[0.72rem] uppercase tracking-[0.18em] text-stone">
         <Link href="/" className="hover:text-ink">
@@ -43,7 +50,7 @@ export default function PeccoleRanchPage() {
       <h1 className="mt-4 max-w-4xl font-display text-5xl font-medium leading-[1.05] sm:text-6xl">
         Peccole Ranch community guide
       </h1>
-      <p className="mt-6 max-w-2xl text-lg text-muted" data-aeo-answer>
+      <p className="mt-6 max-w-2xl text-lg text-muted" id="answer" data-aeo-answer>
         {answer}
       </p>
 

@@ -8,6 +8,7 @@ import { FaqList } from "@/components/FaqList";
 import { marketFaqs } from "@/lib/faqs";
 import { usd } from "@/lib/format";
 import { closedSales, marketSources, septemberNeighborhood } from "@/lib/market";
+import { entityIds } from "@/lib/entity";
 import { pageMeta } from "@/lib/seo";
 
 const title = "Peccole Ranch Market Report | Sept 2026";
@@ -17,21 +18,27 @@ const answer =
   "In September 2026, Peccole Ranch’s median sold price was $595,000 and the median list price was $522,475. Realtor.com counted 67 active listings and a 42-day median on market. Homes sold at 98 percent of list. ZIP 89117 is a wider area than this neighborhood.";
 
 export async function generateMetadata() {
-  return pageMeta({ title, description, path: "/market" });
+  return pageMeta({ title, description, path: "/market", kind: "article" });
 }
 
 export default function MarketPage() {
   return (
     <article className="mx-auto max-w-6xl px-4 py-16">
-      <WebPageJsonLd name={title} description={answer} path="/market" />
+      <WebPageJsonLd
+        name={title}
+        description={answer}
+        path="/market"
+        aboutId={entityIds.place}
+      />
       <ArticleJsonLd headline={title} description={answer} path="/market" />
       <BreadcrumbJsonLd
+        path="/market"
         items={[
           { name: "Home", path: "/" },
           { name: "Market report" },
         ]}
       />
-      <FaqJsonLd faqs={marketFaqs} />
+      <FaqJsonLd faqs={marketFaqs} path="/market" />
 
       <p className="text-[0.72rem] uppercase tracking-[0.18em] text-stone">
         <Link href="/" className="hover:text-ink">
@@ -44,7 +51,7 @@ export default function MarketPage() {
         Peccole Ranch market report
       </h1>
       <p className="mt-3 text-sm text-muted">Figures dated below. Page compiled October 12, 2026.</p>
-      <p className="mt-6 max-w-2xl text-lg text-muted" data-aeo-answer>
+      <p className="mt-6 max-w-2xl text-lg text-muted" id="answer" data-aeo-answer>
         {answer}
       </p>
 

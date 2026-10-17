@@ -23,6 +23,7 @@ export default function ContactPage() {
     <div className="mx-auto max-w-6xl px-4 py-16">
       <WebPageJsonLd name={title} description={answer} path="/contact" />
       <BreadcrumbJsonLd
+        path="/contact"
         items={[
           { name: "Home", path: "/" },
           { name: "Contact" },
@@ -38,7 +39,7 @@ export default function ContactPage() {
       <h1 className="mt-4 font-display text-5xl font-medium leading-[1.05] sm:text-6xl">
         Contact Dr. Jan Duffy
       </h1>
-      <p className="mt-6 max-w-2xl text-lg text-muted" data-aeo-answer>
+      <p className="mt-6 max-w-2xl text-lg text-muted" id="answer" data-aeo-answer>
         {answer}
       </p>
 

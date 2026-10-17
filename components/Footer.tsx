@@ -6,6 +6,10 @@ const links = [
   { href: "/buyers", label: "Buy in Peccole Ranch" },
   { href: "/market", label: "Peccole Ranch market report" },
   { href: "/peccole-ranch", label: "Peccole Ranch community guide" },
+  { href: "/amenities", label: "Nearby amenities" },
+  { href: "/golf-and-gated", label: "Queensridge and Canyon Gate" },
+  { href: "/new-construction", label: "New construction" },
+  { href: "/about", label: "About Dr. Jan Duffy" },
   { href: "/faq", label: "Peccole Ranch questions" },
   { href: "/contact", label: "Contact" },
 ] as const;

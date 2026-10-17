@@ -1,9 +1,11 @@
+import { entityIds } from "@/lib/entity";
 import { area, geo } from "@/lib/site";
 
 export function PlaceJsonLd() {
   const schema = {
     "@context": "https://schema.org",
     "@type": "Place",
+    "@id": entityIds.place,
     name: area.name,
     description:
       "Master-planned community in west Las Vegas, beside Summerlin, primarily ZIP 89117.",

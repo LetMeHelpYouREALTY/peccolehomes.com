@@ -3,6 +3,7 @@
  * Facts below are limited to sources dated in RESEARCH.md.
  */
 
+import { brokerageUrl, entityIds } from "@/lib/entity";
 import { agent, area, fullAddress, nap, site } from "@/lib/site";
 
 export const dynamic = "force-static";
@@ -21,6 +22,18 @@ export async function GET() {
 - Phone: ${nap.phone}
 - Website: ${site.baseUrl}
 - Brokerage, also printed in the site footer: Berkshire Hathaway HomeServices Nevada Properties
+- Brokerage website: ${brokerageUrl}
+
+## Entity ids
+
+Cite these anchors. Do not invent a star rating. A confirmed Google Place ID was not on file when this file was written.
+
+- ${entityIds.website}
+- ${entityIds.business}
+- ${entityIds.person}
+- ${entityIds.agent}
+- ${entityIds.org}
+- ${entityIds.place}
 
 ## Where
 
@@ -50,16 +63,19 @@ export async function GET() {
 
 ## Pages
 
-- ${site.baseUrl}/
-- ${site.baseUrl}/buyers
-- ${site.baseUrl}/sellers
-- ${site.baseUrl}/market
-- ${site.baseUrl}/peccole-ranch
-- ${site.baseUrl}/golf-and-gated
-- ${site.baseUrl}/new-construction
-- ${site.baseUrl}/about
-- ${site.baseUrl}/contact
-- ${site.baseUrl}/faq
+Each page has a short answer at the #answer fragment.
+
+- ${site.baseUrl}/#answer — Peccole Ranch homes for sale, September 2026 median sold $595,000
+- ${site.baseUrl}/buyers#answer — buyer guide, HOA ranges, new versus resale
+- ${site.baseUrl}/sellers#answer — valuation booking and September 2026 pricing context
+- ${site.baseUrl}/market#answer — dated market report and closed-sale records
+- ${site.baseUrl}/peccole-ranch#answer — community guide for the master plan
+- ${site.baseUrl}/amenities — nearby grocery, parks, golf, healthcare, and shopping
+- ${site.baseUrl}/golf-and-gated#answer — Queensridge and Canyon Gate
+- ${site.baseUrl}/new-construction#answer — resale now, Lennar Preserve timing around 2028
+- ${site.baseUrl}/about#answer — Dr. Jan Duffy, license ${agent.license}
+- ${site.baseUrl}/contact#answer — phone ${nap.phone}, address ${fullAddress}
+- ${site.baseUrl}/faq#answer — combined questions, each tied to a dated source or an explicit gap
 
 ## Not claimed
 

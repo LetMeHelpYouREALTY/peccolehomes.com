@@ -81,6 +81,19 @@ Next.js 16.4.0, React 19, TypeScript, Tailwind. `next build` completed with no e
 - Map coordinates were carried from the previous file and were not re-surveyed
 - Valuation form opens the existing Calendly booking. It does not write to Follow Up Boss
 
+## Search, answer, and entity pass (October 17, 2026)
+
+Scored against the nine-point AEO checklist. Shipped the items that do not invent facts.
+
+- `robots.txt` now names 18 AI crawlers and still allows every other agent. `/api/` stays disallowed for the general agent.
+- JSON-LD is one graph with stable ids: `#website`, `#business`, `#person`, `#agent`, `#org`. The Peccole Ranch place id is `/peccole-ranch#place`. Pages, the market article, breadcrumbs, and FAQ blocks point at those ids.
+- The brokerage node links to https://www.bhhsnv.com/ and does not copy that site’s Henderson address or phone.
+- Sitemap `lastmod` follows the newest source on each URL. Golf and gated is October 11, 2026. `/llms.txt` is October 17, 2026. The other URLs are October 12, 2026. Dates are not one deploy stamp.
+- FAQ questions are headings, so the answer sits under an `h3`. Each page’s lead paragraph is `#answer`.
+- The market report’s Open Graph type is `article`, with the October 12, 2026 published and modified dates.
+- Footer links now include golf, new construction, and about.
+- AggregateRating was not added. There is still no confirmed Google Place ID or review count. A made-up rating would be worse than a gap.
+
 ## Compliance scan
 
 Visible copy was checked for “safe neighborhood,” “good schools,” “family-friendly,” “established community,” “exclusive,” “top-rated,” “straightforward,” and “702-222-1964.” None of those phrases are in the rendered pages. Brokerage name is in the footer and in JSON-LD / `llms.txt`, not in page headlines. Phone on the site is (702) 500-0810.

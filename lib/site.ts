@@ -26,11 +26,11 @@ export const fullAddress = `${nap.street}, ${nap.city}, ${nap.state} ${nap.zip}`
 
 export const geo = {
   /**
-   * Carried from the prior site file for this address.
-   * Not re-surveyed on October 12, 2026.
+   * Peccole Ranch Community Association clubhouse, 9501 Red Hills Rd.
+   * OpenStreetMap Nominatim geocode recorded on the production amenity map in 2026.
    */
-  latitude: 36.1797,
-  longitude: -115.2648,
+  latitude: 36.154412,
+  longitude: -115.302415,
 } as const;
 
 export const directionsUrl = `https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(fullAddress)}`;
@@ -68,3 +68,11 @@ export const realScoutAgentEncodedId =
 
 export const ccsdLocatorUrl =
   "https://trans-webinfo.ccsd.net/InfoLocator/InfoLocator/Locator.aspx?OrgGuid=ORG-CCSD&ProfileGuid=CCSD-PROFILE-3";
+
+/**
+ * Verified sameAs URLs. drjanduffy.com returned HTTP 200 on October 17, 2026.
+ * A Google Business Profile URL stays off this list until a Place ID is confirmed.
+ */
+export const organizationSameAs = [site.baseUrl, "https://www.drjanduffy.com"] as const;
+
+export const agentSameAs = ["https://www.drjanduffy.com"] as const;

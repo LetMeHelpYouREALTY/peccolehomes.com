@@ -1,10 +1,12 @@
 import Link from "next/link";
+import { ServiceJsonLd } from "@/components/ServiceJsonLd";
 import { WebPageJsonLd } from "@/components/WebPageJsonLd";
 import { BreadcrumbJsonLd } from "@/components/BreadcrumbJsonLd";
 import { FaqJsonLd } from "@/components/FaqJsonLd";
 import { EditorialImage } from "@/components/EditorialImage";
 import { FaqList } from "@/components/FaqList";
 import { RealScoutWidget } from "@/components/RealScoutWidget";
+import { buyerConsultationUrl } from "@/lib/calendly";
 import { buyerFaqs } from "@/lib/faqs";
 import { hoaRows, neighborhoodBands } from "@/lib/market";
 import { ccsdLocatorUrl } from "@/lib/site";
@@ -25,12 +27,20 @@ export default function BuyersPage() {
     <div className="mx-auto max-w-6xl px-4 py-16">
       <WebPageJsonLd name={title} description={answer} path="/buyers" />
       <BreadcrumbJsonLd
+        path="/buyers"
         items={[
           { name: "Home", path: "/" },
           { name: "Buy" },
         ]}
       />
-      <FaqJsonLd faqs={buyerFaqs} />
+      <FaqJsonLd faqs={buyerFaqs} path="/buyers" />
+      <ServiceJsonLd
+        path="/buyers"
+        serviceType="Buyer brokerage"
+        name="Peccole Ranch buyer guidance"
+        description={answer}
+        bookingUrl={buyerConsultationUrl("buyers-service")}
+      />
 
       <p className="text-[0.72rem] uppercase tracking-[0.18em] text-stone">
         <Link href="/" className="hover:text-ink">
@@ -42,7 +52,7 @@ export default function BuyersPage() {
       <h1 className="mt-4 max-w-4xl font-display text-5xl font-medium leading-[1.05] sm:text-6xl">
         Buy in Peccole Ranch
       </h1>
-      <p className="mt-6 max-w-2xl text-lg text-muted" data-aeo-answer>
+      <p className="mt-6 max-w-2xl text-lg text-muted" id="answer" data-aeo-answer>
         {answer}
       </p>
 
@@ -182,6 +192,15 @@ export default function BuyersPage() {
           . Names only are listed in the questions below.
         </p>
       </section>
+
+      <p className="mt-10">
+        <a
+          href={buyerConsultationUrl("buyers-page")}
+          className="text-[0.72rem] uppercase tracking-[0.18em] underline underline-offset-4"
+        >
+          Book a buyer consultation
+        </a>
+      </p>
 
       <RealScoutWidget heading="Search Peccole Ranch homes" />
 

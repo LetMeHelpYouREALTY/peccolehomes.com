@@ -1,10 +1,12 @@
 import Link from "next/link";
+import { ServiceJsonLd } from "@/components/ServiceJsonLd";
 import { WebPageJsonLd } from "@/components/WebPageJsonLd";
 import { BreadcrumbJsonLd } from "@/components/BreadcrumbJsonLd";
 import { FaqJsonLd } from "@/components/FaqJsonLd";
 import { EditorialImage } from "@/components/EditorialImage";
 import { FaqList } from "@/components/FaqList";
 import { ValuationForm } from "@/components/ValuationForm";
+import { listingConsultationUrl } from "@/lib/calendly";
 import { sellerFaqs } from "@/lib/faqs";
 import { usd } from "@/lib/format";
 import { marketSources, septemberNeighborhood } from "@/lib/market";
@@ -25,12 +27,20 @@ export default function SellersPage() {
     <div className="mx-auto max-w-6xl px-4 py-16">
       <WebPageJsonLd name={title} description={answer} path="/sellers" />
       <BreadcrumbJsonLd
+        path="/sellers"
         items={[
           { name: "Home", path: "/" },
           { name: "Sell" },
         ]}
       />
-      <FaqJsonLd faqs={sellerFaqs} />
+      <FaqJsonLd faqs={sellerFaqs} path="/sellers" />
+      <ServiceJsonLd
+        path="/sellers"
+        serviceType="Listing brokerage"
+        name="Peccole Ranch home valuation"
+        description={answer}
+        bookingUrl={listingConsultationUrl("sellers-service")}
+      />
 
       <p className="text-[0.72rem] uppercase tracking-[0.18em] text-stone">
         <Link href="/" className="hover:text-ink">
@@ -42,7 +52,7 @@ export default function SellersPage() {
       <h1 className="mt-4 max-w-4xl font-display text-5xl font-medium leading-[1.05] tracking-tight sm:text-6xl">
         Sell my Peccole Ranch home
       </h1>
-      <p className="mt-6 max-w-2xl text-lg text-muted" data-aeo-answer>
+      <p className="mt-6 max-w-2xl text-lg text-muted" id="answer" data-aeo-answer>
         {answer}
       </p>
 

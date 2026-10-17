@@ -29,7 +29,7 @@ export default function HomePage() {
         description={answer}
         path="/"
       />
-      <FaqJsonLd faqs={homeFaqs} />
+      <FaqJsonLd faqs={homeFaqs} path="/" />
 
       <section className="relative min-h-[80vh] bg-[#12100E] text-[#F6F1E8]">
         <Image
@@ -48,7 +48,7 @@ export default function HomePage() {
           <h1 className="mt-4 max-w-4xl font-display text-5xl font-medium leading-[1.05] tracking-tight sm:text-7xl">
             Peccole Ranch homes for sale
           </h1>
-          <p className="mt-6 max-w-2xl text-lg leading-relaxed text-[#F6F1E8]" data-aeo-answer>
+          <p className="mt-6 max-w-2xl text-lg leading-relaxed text-[#F6F1E8]" id="answer" data-aeo-answer>
             {answer}
           </p>
           <div className="mt-10 flex flex-col gap-3 sm:flex-row">

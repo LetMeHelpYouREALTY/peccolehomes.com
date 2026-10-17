@@ -1,10 +1,12 @@
 import Link from "next/link";
+import { ServiceJsonLd } from "@/components/ServiceJsonLd";
 import { WebPageJsonLd } from "@/components/WebPageJsonLd";
 import { BreadcrumbJsonLd } from "@/components/BreadcrumbJsonLd";
 import { FaqJsonLd } from "@/components/FaqJsonLd";
 import { EditorialImage } from "@/components/EditorialImage";
 import { FaqList } from "@/components/FaqList";
 import { ValuationForm } from "@/components/ValuationForm";
+import { listingConsultationUrl } from "@/lib/calendly";
 import { sellerFaqs } from "@/lib/faqs";
 import { usd } from "@/lib/format";
 import { marketSources, septemberNeighborhood } from "@/lib/market";
@@ -32,6 +34,13 @@ export default function SellersPage() {
         ]}
       />
       <FaqJsonLd faqs={sellerFaqs} path="/sellers" />
+      <ServiceJsonLd
+        path="/sellers"
+        serviceType="Listing brokerage"
+        name="Peccole Ranch home valuation"
+        description={answer}
+        bookingUrl={listingConsultationUrl("sellers-service")}
+      />
 
       <p className="text-[0.72rem] uppercase tracking-[0.18em] text-stone">
         <Link href="/" className="hover:text-ink">

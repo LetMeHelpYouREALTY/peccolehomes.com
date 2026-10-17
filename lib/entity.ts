@@ -11,6 +11,8 @@ export const entityIds = {
   person: `${site.baseUrl}/#person`,
   agent: `${site.baseUrl}/#agent`,
   org: `${site.baseUrl}/#org`,
+  /** Alias kept for the production llms-full briefing. Same node as org. */
+  organization: `${site.baseUrl}/#org`,
   place: `${site.baseUrl}/peccole-ranch#place`,
 } as const;
 

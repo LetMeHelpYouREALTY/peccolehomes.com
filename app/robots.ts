@@ -1,5 +1,8 @@
 import type { MetadataRoute } from "next";
 import { site } from "@/lib/site";
+import { AI_CRAWLER_USER_AGENTS } from "@/lib/ai-crawlers";
+
+const sharedDisallow = ["/api/"];
 
 /**
  * Explicit allow for citation and index bots.
@@ -28,6 +31,12 @@ const aiCrawlers = [
 ] as const;
 
 export default function robots(): MetadataRoute.Robots {
+  const aiRules = AI_CRAWLER_USER_AGENTS.map((userAgent) => ({
+    userAgent,
+    allow: "/",
+    disallow: sharedDisallow,
+  }));
+
   return {
     rules: [
       {

@@ -1,6 +1,7 @@
 import type { MetadataRoute } from "next";
 import { pageUpdated, type SitePath } from "@/lib/entity";
 import { site } from "@/lib/site";
+import { sitemapLastModified } from "@/lib/sitemap-dates";
 
 const base = site.baseUrl;
 

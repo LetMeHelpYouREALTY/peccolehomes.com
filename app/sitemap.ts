@@ -10,6 +10,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { path: "/about", priority: 0.8, changeFrequency: "monthly" as const },
     { path: "/contact", priority: 0.8, changeFrequency: "monthly" as const },
     { path: "/peccole-ranch", priority: 0.9, changeFrequency: "weekly" as const },
+    { path: "/buyers", priority: 0.9, changeFrequency: "weekly" as const },
     { path: "/sellers", priority: 0.9, changeFrequency: "weekly" as const },
     { path: "/faq", priority: 0.7, changeFrequency: "monthly" as const },
     { path: "/llms.txt", priority: 0.5, changeFrequency: "monthly" as const },

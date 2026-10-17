@@ -105,6 +105,12 @@ export default function HomePage() {
           Peccole Ranch Homes for Sale
         </Link>
         <Link
+          href="/buyers"
+          className="font-medium text-gray-900 underline underline-offset-4 dark:text-white"
+        >
+          Buy in Peccole Ranch
+        </Link>
+        <Link
           href="/sellers"
           className="font-medium text-gray-900 underline underline-offset-4 dark:text-white"
         >

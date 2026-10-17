@@ -1,5 +1,6 @@
-import { site, nap, fullAddress, geo, agent, brokerage } from "@/lib/site";
+import { site, nap, geo, agent, brokerage } from "@/lib/site";
 import { entityIds } from "@/lib/entity-ids";
+import { peccoleRanchAreaServed } from "@/lib/area-served";
 
 export function LocalBusinessJsonLd() {
   const schema = {
@@ -36,18 +37,7 @@ export function LocalBusinessJsonLd() {
       identifier: agent.license,
       worksFor: { "@id": entityIds.business },
     },
-    areaServed: {
-      "@type": "Place",
-      name: "Peccole Ranch",
-      containedInPlace: {
-        "@type": "City",
-        name: "Las Vegas",
-        containedInPlace: {
-          "@type": "State",
-          name: "Nevada",
-        },
-      },
-    },
+    areaServed: peccoleRanchAreaServed,
   };
 
   const json = JSON.stringify(schema).replace(/</g, "\\u003c");

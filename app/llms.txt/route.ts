@@ -29,8 +29,8 @@ Peccole Homes is led by ${agent.name} (Nevada license ${agent.license}) with ${b
 ## Services
 
 - **Peccole Ranch Homes for Sale** — Search and view current listings in Peccole Ranch
-- **Buyer representation** — Find and purchase Peccole Ranch homes with local expertise
-- **Seller representation** — List and sell your Peccole Ranch home ([/sellers](${site.baseUrl}/sellers))
+- **Buyer representation** — [Buy in Peccole Ranch](${site.baseUrl}/buyers) (Calendly: buyer-consultation-30-min)
+- **Seller representation** — [Sell in Peccole Ranch](${site.baseUrl}/sellers) (Calendly: listing-consultation)
 - **Neighborhood guidance** — HOA rules, amenities, and commute context in Peccole Ranch
 - **Market insight** — Pricing and trends for Peccole Ranch, Las Vegas
 
@@ -42,6 +42,7 @@ Peccole Ranch is a master-planned community in western Las Vegas, Nevada, near S
 
 - [Home — Peccole Ranch Homes for Sale](${site.baseUrl}/)
 - [Peccole Ranch Neighborhood](${site.baseUrl}/peccole-ranch)
+- [Buy in Peccole Ranch](${site.baseUrl}/buyers)
 - [Sell in Peccole Ranch](${site.baseUrl}/sellers)
 - [Contact](${site.baseUrl}/contact)
 - [About](${site.baseUrl}/about)

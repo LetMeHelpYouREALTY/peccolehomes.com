@@ -58,6 +58,9 @@ export function Footer() {
           </div>
         </div>
         <nav className="mt-8 flex flex-wrap justify-center gap-x-6 gap-y-2 text-sm text-gray-600 dark:text-gray-300">
+          <a href="/buyers" className="hover:text-gray-900 dark:hover:text-white">
+            Buy in Peccole Ranch
+          </a>
           <a href="/sellers" className="hover:text-gray-900 dark:hover:text-white">
             Sell your Peccole Ranch home
           </a>

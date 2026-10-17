@@ -3,6 +3,7 @@ import Link from "next/link";
 import { WebPageJsonLd } from "@/components/WebPageJsonLd";
 import { BreadcrumbJsonLd } from "@/components/BreadcrumbJsonLd";
 import { FaqJsonLd } from "@/components/FaqJsonLd";
+import { ServiceJsonLd } from "@/components/ServiceJsonLd";
 import { agent, brokerage, site } from "@/lib/site";
 import { listingConsultationUrl } from "@/lib/calendly";
 
@@ -41,6 +42,13 @@ export default function SellersPage() {
         name="Sell Your Peccole Ranch Home"
         description={`Sell your Peccole Ranch home with ${agent.name}, ${brokerage.name}. Book a listing consultation for pricing, prep, and marketing in west Las Vegas.`}
         path="/sellers"
+      />
+      <ServiceJsonLd
+        path="/sellers"
+        serviceType="Seller representation"
+        name="Peccole Ranch seller representation"
+        description={`Listing consultation, pricing, and marketing for Peccole Ranch homes with ${agent.name}.`}
+        bookingUrl={listingHeroUrl}
       />
       <BreadcrumbJsonLd
         items={[

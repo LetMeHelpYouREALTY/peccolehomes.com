@@ -1,5 +1,15 @@
 import { brokerageUrl, entityIds } from "@/lib/entity";
-import { agent, area, brokerage, fullAddress, geo, nap, site } from "@/lib/site";
+import {
+  agent,
+  agentSameAs,
+  area,
+  brokerage,
+  fullAddress,
+  geo,
+  nap,
+  organizationSameAs,
+  site,
+} from "@/lib/site";
 
 const license = {
   "@type": "PropertyValue",
@@ -59,6 +69,7 @@ export function LocalBusinessJsonLd() {
         "@id": entityIds.org,
         name: brokerage.name,
         url: brokerageUrl,
+        sameAs: [...organizationSameAs],
       },
       {
         "@type": ["RealEstateAgent", "LocalBusiness"],
@@ -79,6 +90,7 @@ export function LocalBusinessJsonLd() {
         employee: { "@id": entityIds.person },
         areaServed,
         knowsAbout: [fullAddress, area.name, "ZIP 89117", "ZIP 89145"],
+        sameAs: [...organizationSameAs],
       },
       {
         "@type": "Person",
@@ -88,6 +100,7 @@ export function LocalBusinessJsonLd() {
         identifier: license,
         telephone: nap.phoneSchema,
         url: `${site.baseUrl}/about`,
+        sameAs: [...agentSameAs],
         worksFor: [{ "@id": entityIds.org }, { "@id": entityIds.business }],
       },
       {
@@ -100,6 +113,7 @@ export function LocalBusinessJsonLd() {
         identifier: license,
         address: postalAddress,
         parentOrganization: { "@id": entityIds.org },
+        sameAs: [...agentSameAs],
         areaServed,
       },
     ],

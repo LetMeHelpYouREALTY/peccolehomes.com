@@ -14,6 +14,7 @@ const routes: { path: SitePath; priority: number; changeFrequency: "weekly" | "m
   { path: "/new-construction", priority: 0.7, changeFrequency: "monthly" },
   { path: "/about", priority: 0.6, changeFrequency: "monthly" },
   { path: "/contact", priority: 0.7, changeFrequency: "monthly" },
+  { path: "/amenities", priority: 0.7, changeFrequency: "monthly" },
   { path: "/faq", priority: 0.6, changeFrequency: "monthly" },
   { path: "/llms.txt", priority: 0.4, changeFrequency: "monthly" },
 ];

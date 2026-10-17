@@ -29,6 +29,7 @@ export const pageUpdated = {
   "/faq": "2026-10-12",
   "/about": "2026-10-12",
   "/contact": "2026-10-12",
+  "/amenities": "2026-10-17",
   "/buyers": "2026-10-12",
   "/golf-and-gated": "2026-10-11",
   "/peccole-ranch": "2026-10-12",

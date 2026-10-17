@@ -70,6 +70,7 @@ Each page has a short answer at the #answer fragment.
 - ${site.baseUrl}/sellers#answer — valuation booking and September 2026 pricing context
 - ${site.baseUrl}/market#answer — dated market report and closed-sale records
 - ${site.baseUrl}/peccole-ranch#answer — community guide for the master plan
+- ${site.baseUrl}/amenities — nearby grocery, parks, golf, healthcare, and shopping
 - ${site.baseUrl}/golf-and-gated#answer — Queensridge and Canyon Gate
 - ${site.baseUrl}/new-construction#answer — resale now, Lennar Preserve timing around 2028
 - ${site.baseUrl}/about#answer — Dr. Jan Duffy, license ${agent.license}

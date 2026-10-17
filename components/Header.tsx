@@ -6,6 +6,7 @@ const links = [
   { href: "/sellers", label: "Sell" },
   { href: "/market", label: "Market" },
   { href: "/peccole-ranch", label: "Community" },
+  { href: "/amenities", label: "Nearby" },
   { href: "/golf-and-gated", label: "Golf and gated" },
   { href: "/new-construction", label: "New homes" },
   { href: "/about", label: "About" },

@@ -5,9 +5,9 @@ import { BreadcrumbJsonLd } from "@/components/BreadcrumbJsonLd";
 import { agent, brokerage } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "Peccole Ranch Homes | Las Vegas Master-Planned Community",
+  title: "Peccole Ranch Community Guide",
   description:
-    "Peccole Ranch Homes in Summerlin, Las Vegas: parks, schools, Red Rock access, and family-friendly living. Your guide from Dr. Jan Duffy, Berkshire Hathaway HomeServices Nevada Properties.",
+    "Peccole Ranch in west Las Vegas: parks, trails, clubhouse amenities, and Red Rock access. Community guide from Dr. Jan Duffy, Berkshire Hathaway HomeServices.",
   alternates: {
     canonical: "/peccole-ranch",
   },
@@ -17,8 +17,8 @@ export default function PeccoleRanchPage() {
   return (
     <div className="mx-auto max-w-4xl px-4 py-16">
       <WebPageJsonLd
-        name="Peccole Ranch Homes | Las Vegas Master-Planned Community"
-        description={`Peccole Ranch is a master-planned community in Summerlin, Las Vegas, Nevada, with parks, top schools, and access to Red Rock Canyon and the 215. Guide from ${agent.name}, ${brokerage.name}.`}
+        name="Peccole Ranch Community Guide"
+        description={`Peccole Ranch is a master-planned community in western Las Vegas, Nevada, with parks, trails, and access to Red Rock Canyon and the 215. Guide from ${agent.name}, ${brokerage.name}.`}
         path="/peccole-ranch"
       />
       <BreadcrumbJsonLd
@@ -31,10 +31,13 @@ export default function PeccoleRanchPage() {
         Peccole Ranch Homes & Community
       </h1>
       <p className="mt-4 text-lg text-gray-600 dark:text-gray-300" data-aeo-answer>
-        Peccole Ranch is a master-planned community in Summerlin, Las Vegas, Nevada, known for tree-lined streets, top schools, and family-friendly living, with easy access to Red Rock Canyon and the 215.
+        Peccole Ranch is a master-planned community in western Las Vegas, Nevada, near Summerlin,
+        with tree-lined streets, parks, trails, and clubhouse amenities, plus convenient access to
+        Red Rock Canyon and the 215 Beltway.
       </p>
       <p className="mt-2 text-gray-600 dark:text-gray-300">
-        Looking for Peccole Ranch homes? Search listings above or contact us for current availability and market insight.
+        Looking for Peccole Ranch homes? Search listings above or contact us for current availability
+        and market insight.
       </p>
 
       <section className="mt-10 prose prose-gray dark:prose-invert max-w-none">
@@ -42,32 +45,36 @@ export default function PeccoleRanchPage() {
           Location & lifestyle
         </h2>
         <p className="text-gray-600 dark:text-gray-300">
-          Peccole Ranch sits in Summerlin, one of the most desirable areas in the Las Vegas valley. 
-          Residents enjoy parks, trails, community pools, and a strong sense of neighborhood. 
-          The area is known for good schools and a family-friendly feel while still being a short drive from the Strip and downtown.
+          Peccole Ranch sits in west Las Vegas, adjacent to Summerlin and other established west-side
+          neighborhoods. Residents use community parks, trails, pools, and clubhouse facilities while
+          staying a short drive from Downtown Summerlin, the Strip, and downtown Las Vegas.
         </p>
 
         <h2 className="mt-8 text-2xl font-semibold text-gray-900 dark:text-white">
           Why buyers choose Peccole Ranch
         </h2>
         <ul className="list-disc pl-6 text-gray-600 dark:text-gray-300">
-          <li>Strong schools and family-oriented amenities</li>
           <li>Parks, walking paths, and outdoor recreation</li>
+          <li>Clubhouse, tennis, and on-site amenities (varies by sub-association)</li>
           <li>Convenient access to the 215 and Red Rock Canyon</li>
-          <li>Variety of single-family homes and floor plans</li>
-          <li>Established HOA communities with maintained common areas</li>
+          <li>Variety of single-family homes, townhomes, and condominiums</li>
+          <li>HOA-maintained common areas across multiple villages</li>
         </ul>
 
         <h2 className="mt-8 text-2xl font-semibold text-gray-900 dark:text-white">
           Peccole Ranch Homes for Sale
         </h2>
         <p className="text-gray-600 dark:text-gray-300">
-          Whether you’re looking for your first home, an upgrade, or an investment in Peccole Ranch, 
-          we can help you find the right fit and guide you through the market. 
+          Whether you are purchasing your first home, moving up, or investing in Peccole Ranch, we can
+          help you compare floor plans and pricing.{" "}
           <Link href="/contact" className="font-medium underline underline-offset-4">
             Contact us
           </Link>{" "}
-          for current listings and local market insight.
+          for current listings, or{" "}
+          <Link href="/sellers" className="font-medium underline underline-offset-4">
+            plan your sale
+          </Link>{" "}
+          with a listing consultation.
         </p>
       </section>
 

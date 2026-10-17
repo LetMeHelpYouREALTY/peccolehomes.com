@@ -5,7 +5,7 @@ import { BreadcrumbJsonLd } from "@/components/BreadcrumbJsonLd";
 
 export const metadata: Metadata = {
   title: "About Us",
-  description: `About ${nap.businessName} — ${agent.name}, ${brokerage.name}. Peccole Ranch Homes and Las Vegas real estate. Local knowledge, trusted service.`,
+  description: `About ${nap.businessName}: ${agent.name}, ${brokerage.name}. Peccole Ranch and west Las Vegas real estate with local market guidance.`,
   alternates: {
     canonical: "/about",
   },
@@ -32,9 +32,10 @@ export default function AboutPage() {
         {nap.businessName} is led by {agent.name} (Nevada license {agent.license}) with {brokerage.name}, focused on Peccole Ranch Homes and the greater Summerlin area in Las Vegas. Office: {nap.street}, {nap.city}, {nap.state} {nap.zip}.
       </p>
       <p className="mt-4 text-gray-600 dark:text-gray-300">
-        We focus on Peccole Ranch and the greater Summerlin area so we can offer real local expertise— 
-        from market trends and neighborhood fit to schools and HOA details. Whether you’re buying or selling 
-        in Peccole Ranch, Las Vegas, we’re here to help with a straightforward, professional experience.
+        We focus on Peccole Ranch and nearby west Las Vegas communities so we can offer real local
+        expertise—from market trends and HOA details to commute times and amenity access. Whether you
+        are buying or selling in Peccole Ranch, we are here to help with a straightforward, professional
+        experience.
       </p>
       <p className="mt-4 text-gray-600 dark:text-gray-300">
         Our office is at {nap.street}, {nap.city}, {nap.state} {nap.zip}. 

@@ -21,10 +21,12 @@ export function FaqJsonLd({ faqs }: FaqJsonLdProps) {
     })),
   };
 
+  const json = JSON.stringify(schema).replace(/</g, "\\u003c");
+
   return (
     <script
       type="application/ld+json"
-      dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+      dangerouslySetInnerHTML={{ __html: json }}
     />
   );
 }

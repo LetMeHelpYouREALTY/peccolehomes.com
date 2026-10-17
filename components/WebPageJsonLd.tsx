@@ -1,4 +1,5 @@
 import { site } from "@/lib/site";
+import { entityIds, webpageId } from "@/lib/entity-ids";
 
 type WebPageJsonLdProps = {
   name: string;
@@ -14,20 +15,24 @@ export function WebPageJsonLd({ name, description, path = "" }: WebPageJsonLdPro
   const schema = {
     "@context": "https://schema.org",
     "@type": "WebPage",
+    "@id": webpageId(path),
     name,
     description,
     url,
     isPartOf: {
-      "@type": "WebSite",
-      name: site.name,
-      url: site.baseUrl,
+      "@id": entityIds.website,
+    },
+    about: {
+      "@id": entityIds.business,
     },
   };
+
+  const json = JSON.stringify(schema).replace(/</g, "\\u003c");
 
   return (
     <script
       type="application/ld+json"
-      dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+      dangerouslySetInnerHTML={{ __html: json }}
     />
   );
 }

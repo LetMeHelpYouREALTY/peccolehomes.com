@@ -2,7 +2,7 @@ export const homeFaqs = [
   {
     question: "Where is Peccole Ranch?",
     answer:
-      "Peccole Ranch is a master-planned community in Summerlin, Las Vegas, Nevada. It sits west of the Las Vegas Strip with convenient access to the 215 Beltway and Red Rock Canyon.",
+      "Peccole Ranch is a master-planned community in western Las Vegas, Nevada, near Summerlin. It sits west of the Las Vegas Strip with access to the 215 Beltway and Red Rock Canyon.",
   },
   {
     question: "How do I search Peccole Ranch homes for sale?",

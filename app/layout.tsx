@@ -10,7 +10,7 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   title: {
-    default: "Peccole Ranch Homes | Homes for Sale in Peccole Ranch, Las Vegas",
+    default: "Peccole Ranch Homes for Sale | Las Vegas",
     template: `%s | ${site.name}`,
   },
   description:
@@ -24,8 +24,9 @@ export const metadata: Metadata = {
     "Summerlin real estate",
   ],
   openGraph: {
-    title: "Peccole Ranch Homes | Homes for Sale in Peccole Ranch, Las Vegas",
-    description: "Peccole Ranch Homes and Las Vegas real estate. Local expertise for buyers and sellers in Peccole Ranch, Summerlin.",
+    title: "Peccole Ranch Homes for Sale | Las Vegas",
+    description:
+      "Peccole Ranch Homes and west Las Vegas real estate. Local expertise for buyers and sellers with Dr. Jan Duffy.",
     url: site.baseUrl,
     siteName: site.name,
     locale: "en_US",
@@ -46,8 +47,9 @@ export const metadata: Metadata = {
   metadataBase: new URL(site.baseUrl),
   twitter: {
     card: "summary_large_image",
-    title: "Peccole Ranch Homes | Homes for Sale in Peccole Ranch, Las Vegas",
-    description: "Peccole Ranch Homes and Las Vegas real estate. Local expertise for buyers and sellers in Peccole Ranch, Summerlin.",
+    title: "Peccole Ranch Homes for Sale | Las Vegas",
+    description:
+      "Peccole Ranch Homes and west Las Vegas real estate. Local expertise for buyers and sellers with Dr. Jan Duffy.",
     images: ["/opengraph-image"],
   },
   ...(process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION && {

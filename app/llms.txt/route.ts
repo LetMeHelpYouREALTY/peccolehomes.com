@@ -5,17 +5,18 @@
  */
 
 import { site, nap, fullAddress, agent, brokerage } from "@/lib/site";
+import { entityIds } from "@/lib/entity-ids";
 
 export const dynamic = "force-dynamic";
 
 export async function GET() {
   const content = `# Peccole Homes — Peccole Ranch Homes & Las Vegas Real Estate
 
-> Real estate focused on Peccole Ranch Homes and the Summerlin area. ${agent.name}, ${brokerage.name}. Local expertise for buyers and sellers in Peccole Ranch, Las Vegas, Nevada.
+> Real estate focused on Peccole Ranch Homes in western Las Vegas, Nevada. ${agent.name}, ${brokerage.name}. Local expertise for buyers and sellers.
 
 ## About
 
-Peccole Homes is led by ${agent.name} (Nevada license ${agent.license}) with ${brokerage.name}, specializing in Peccole Ranch Homes and the greater Summerlin area in Las Vegas. We focus on this neighborhood to offer hyperlocal market insight, from listings and pricing to schools, HOA details, and community fit.
+Peccole Homes is led by ${agent.name} (Nevada license ${agent.license}) with ${brokerage.name}, specializing in Peccole Ranch Homes and nearby west Las Vegas communities. We focus on this neighborhood for hyperlocal market insight, from listings and pricing to HOA details and amenity access.
 
 - **Business:** ${nap.businessName}
 - **Agent:** ${agent.name} (${agent.license})
@@ -23,18 +24,19 @@ Peccole Homes is led by ${agent.name} (Nevada license ${agent.license}) with ${b
 - **Address:** ${fullAddress}
 - **Phone:** ${nap.phone}
 - **Website:** ${site.baseUrl}
+- **Entity IDs:** ${entityIds.website}, ${entityIds.business}, ${entityIds.agent}
 
 ## Services
 
 - **Peccole Ranch Homes for Sale** — Search and view current listings in Peccole Ranch
 - **Buyer representation** — Find and purchase Peccole Ranch homes with local expertise
-- **Seller representation** — List and sell your Peccole Ranch home
-- **Neighborhood guidance** — Schools, HOA, amenities, and lifestyle in Peccole Ranch and Summerlin
+- **Seller representation** — List and sell your Peccole Ranch home ([/sellers](${site.baseUrl}/sellers))
+- **Neighborhood guidance** — HOA rules, amenities, and commute context in Peccole Ranch
 - **Market insight** — Pricing and trends for Peccole Ranch, Las Vegas
 
 ## Location
 
-Peccole Ranch is a master-planned community in Summerlin, Las Vegas, Nevada. It is west of the Las Vegas Strip, with access to the 215 Beltway and Red Rock Canyon. Tree-lined streets, parks, top-rated schools, and family-friendly amenities. Part of Clark County School District.
+Peccole Ranch is a master-planned community in western Las Vegas, Nevada, near Summerlin. It is west of the Las Vegas Strip, with access to the 215 Beltway and Red Rock Canyon. Amenities include tree-lined streets, parks, trails, and clubhouse facilities (varies by village).
 
 ## Key Pages
 
@@ -47,11 +49,11 @@ Peccole Ranch is a master-planned community in Summerlin, Las Vegas, Nevada. It 
 
 ## Peccole Ranch Facts
 
-- Master-planned community in Summerlin, Las Vegas
-- Strong schools and family-oriented amenities
-- Parks, walking paths, outdoor recreation
+- Master-planned community in western Las Vegas near Summerlin
+- Parks, walking paths, and outdoor recreation
+- Clubhouse and on-site amenities (varies by sub-association)
 - Convenient access to 215 and Red Rock Canyon
-- Single-family and multi-family homes; HOA communities
+- Single-family homes, townhomes, condominiums; HOA villages
 
 ## Contact
 

@@ -8,7 +8,7 @@ import { agent, brokerage } from "@/lib/site";
 export const metadata: Metadata = {
   title: "FAQ — Peccole Ranch Homes",
   description:
-    "FAQ about Peccole Ranch Homes in Summerlin, Las Vegas: location, HOA, home types, and how to buy or sell with Dr. Jan Duffy, Berkshire Hathaway HomeServices Nevada Properties.",
+    "FAQ about Peccole Ranch Homes in west Las Vegas: location, HOA fees, home types, and how to buy or sell with Dr. Jan Duffy, Berkshire Hathaway HomeServices.",
   alternates: {
     canonical: "/faq",
   },
@@ -19,7 +19,7 @@ export default function FaqPage() {
     <div className="mx-auto max-w-4xl px-4 py-16">
       <WebPageJsonLd
         name="FAQ — Peccole Ranch Homes"
-        description={`Frequently asked questions about Peccole Ranch Homes and Las Vegas real estate with ${agent.name}, ${brokerage.name}: where is Peccole Ranch, HOA fees, schools, types of homes, and how to buy or sell.`}
+        description={`Frequently asked questions about Peccole Ranch Homes and Las Vegas real estate with ${agent.name}, ${brokerage.name}: location, HOA fees, home types, and how to buy or sell.`}
         path="/faq"
       />
       <BreadcrumbJsonLd

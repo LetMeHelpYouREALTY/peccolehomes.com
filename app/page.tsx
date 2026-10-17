@@ -25,7 +25,9 @@ export default function HomePage() {
           Peccole Ranch Homes for Sale
         </h1>
         <p className="mt-4 text-lg text-gray-600 dark:text-gray-300" data-aeo-answer>
-          Peccole Ranch Homes are for sale in Summerlin, Las Vegas. {agent.name} with {brokerage.name} is your local expert at {nap.street}, {nap.city}, {nap.state} {nap.zip}—find listings, buy, or sell with confidence.
+          Peccole Ranch Homes are for sale in western Las Vegas, Nevada. {agent.name} with{" "}
+          {brokerage.name} is your local expert at {nap.street}, {nap.city}, {nap.state} {nap.zip}—find
+          listings, buy, or sell with confidence.
         </p>
         <div className="mt-8 flex flex-wrap justify-center gap-4">
           <a
@@ -58,9 +60,9 @@ export default function HomePage() {
           Why Peccole Ranch?
         </h2>
         <p className="mt-4 text-gray-600 dark:text-gray-300">
-          Peccole Ranch is a master-planned community in Summerlin, one of Las Vegas’s most sought-after areas. 
-          Tree-lined streets, parks, top-rated schools, and easy access to Red Rock Canyon and the 215 make it ideal 
-          for families and professionals who want space and quality of life without leaving the valley.
+          Peccole Ranch is a master-planned community in west Las Vegas near Summerlin. Tree-lined
+          streets, parks, trails, and easy access to Red Rock Canyon and the 215 Beltway make it a
+          practical base for valley commutes and outdoor recreation.
         </p>
         <p className="mt-4 text-gray-600 dark:text-gray-300">
           Whether you’re looking for a first home, an upgrade, or an investment property among Peccole Ranch homes, 
@@ -101,6 +103,12 @@ export default function HomePage() {
           className="font-medium text-gray-900 underline underline-offset-4 dark:text-white"
         >
           Peccole Ranch Homes for Sale
+        </Link>
+        <Link
+          href="/sellers"
+          className="font-medium text-gray-900 underline underline-offset-4 dark:text-white"
+        >
+          Sell in Peccole Ranch
         </Link>
         <Link
           href="/contact"

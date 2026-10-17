@@ -68,6 +68,7 @@ export default function RootLayout({
         <link rel="preconnect" href="https://em.realscout.com" />
         <link rel="dns-prefetch" href="https://em.realscout.com" />
         <link rel="alternate" type="text/plain" href="/llms.txt" title="Site summary for AI and LLM crawlers (GEO)" />
+        <link rel="alternate" type="text/plain" href="/llms-full.txt" title="Extended AI/LLM site briefing (GEO)" />
         <LocalBusinessJsonLd />
         <WebSiteJsonLd />
         <Script

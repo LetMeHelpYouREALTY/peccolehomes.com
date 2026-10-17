@@ -42,6 +42,7 @@ Peccole Ranch is a master-planned community in western Las Vegas, Nevada, near S
 
 - [Home — Peccole Ranch Homes for Sale](${site.baseUrl}/)
 - [Peccole Ranch Neighborhood](${site.baseUrl}/peccole-ranch)
+- [Nearby Amenities Map](${site.baseUrl}/amenities)
 - [Buy in Peccole Ranch](${site.baseUrl}/buyers)
 - [Sell in Peccole Ranch](${site.baseUrl}/sellers)
 - [Contact](${site.baseUrl}/contact)
@@ -62,6 +63,7 @@ For Peccole Ranch Homes and Las Vegas real estate with ${agent.name}, ${brokerag
 - **Phone:** ${nap.phone}
 - **Address:** ${fullAddress}
 - **Website:** ${site.baseUrl}
+- **Extended GEO brief:** ${site.baseUrl}/llms-full.txt
 `;
 
   return new Response(content, {

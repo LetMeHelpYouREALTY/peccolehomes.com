@@ -26,9 +26,9 @@ export const nap = {
 export const fullAddress = `${nap.street}, ${nap.city}, ${nap.state} ${nap.zip}`;
 
 export const geo = {
-  /** For schema and map embed - office/Peccole Ranch area */
-  latitude: 36.1797,
-  longitude: -115.2648,
+  /** Peccole Ranch Community Association clubhouse, 9501 Red Hills Rd (OSM geocode) */
+  latitude: 36.154412,
+  longitude: -115.302415,
 } as const;
 
 /** Google Maps URL for Directions CTA */
@@ -46,6 +46,19 @@ export const agent = {
 export const brokerage = {
   name: "Berkshire Hathaway HomeServices Nevada Properties",
 } as const;
+
+/**
+ * Verified sameAs URLs for schema.org (add GBP profile URL when Place ID is confirmed).
+ * Last verified: 2026-10-17 — peccolehomes.com + drjanduffy.com HTTP 200.
+ */
+export const organizationSameAs: readonly string[] = [
+  site.baseUrl,
+  "https://www.drjanduffy.com",
+];
+
+export const agentSameAs: readonly string[] = [
+  "https://www.drjanduffy.com",
+];
 
 /** RealScout widget agent ID (base64). Same as heyberkshire.com if same agent. */
 export const realScoutAgentEncodedId =

@@ -1,4 +1,4 @@
-import { site, nap, geo, agent, brokerage } from "@/lib/site";
+import { site, nap, geo, agent, brokerage, organizationSameAs, agentSameAs } from "@/lib/site";
 import { entityIds } from "@/lib/entity-ids";
 import { peccoleRanchAreaServed } from "@/lib/area-served";
 
@@ -10,6 +10,7 @@ export function LocalBusinessJsonLd() {
     name: nap.businessName,
     description: `Peccole Ranch Homes and Las Vegas real estate. ${agent.name}, ${brokerage.name}. Local expertise for buyers and sellers in Peccole Ranch and west Las Vegas.`,
     url: site.baseUrl,
+    sameAs: [...organizationSameAs],
     telephone: nap.phoneSchema,
     address: {
       "@type": "PostalAddress",
@@ -28,6 +29,7 @@ export function LocalBusinessJsonLd() {
       "@type": "Organization",
       "@id": entityIds.organization,
       name: brokerage.name,
+      sameAs: [...organizationSameAs],
     },
     employee: {
       "@type": "Person",
@@ -35,6 +37,7 @@ export function LocalBusinessJsonLd() {
       name: agent.name,
       jobTitle: "Real Estate Agent",
       identifier: agent.license,
+      sameAs: [...agentSameAs],
       worksFor: { "@id": entityIds.business },
     },
     areaServed: peccoleRanchAreaServed,

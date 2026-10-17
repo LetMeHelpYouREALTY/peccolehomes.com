@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { nap, fullAddress, directionsUrl, agent, brokerage } from "@/lib/site";
 import { WebPageJsonLd } from "@/components/WebPageJsonLd";
 import { BreadcrumbJsonLd } from "@/components/BreadcrumbJsonLd";
@@ -59,6 +60,14 @@ export default function ContactPage() {
           </a>
         </div>
       </div>
+
+      <p className="mt-8 text-gray-600 dark:text-gray-300">
+        Explore{" "}
+        <Link href="/amenities" className="font-medium underline underline-offset-4">
+          nearby amenities in Peccole Ranch
+        </Link>{" "}
+        — grocery, parks, healthcare, and schools on our interactive map.
+      </p>
 
       <div className="mt-10 h-80 overflow-hidden rounded-lg">
         <iframe

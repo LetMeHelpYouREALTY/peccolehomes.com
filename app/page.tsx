@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { nap, directionsUrl, googleReviewsUrl, agent, brokerage } from "@/lib/site";
 import { homeFaqs } from "@/lib/faqs";
+import { AmenityMapSection } from "@/components/AmenityMapSection";
 import { WebPageJsonLd } from "@/components/WebPageJsonLd";
 import { FaqJsonLd } from "@/components/FaqJsonLd";
 
@@ -16,7 +17,7 @@ export default function HomePage() {
     <div className="mx-auto max-w-4xl px-4 py-16">
       <WebPageJsonLd
         name="Peccole Ranch Homes for Sale"
-        description={`Peccole Ranch Homes for sale in Summerlin, Las Vegas. ${agent.name}, ${brokerage.name}, at 9501 Red Hills Rd, Las Vegas, NV 89117—buy or sell with confidence.`}
+        description={`Peccole Ranch Homes for sale in western Las Vegas. ${agent.name}, ${brokerage.name}, at 9501 Red Hills Rd, Las Vegas, NV 89117—buy or sell with confidence.`}
         path="/"
       />
       <FaqJsonLd faqs={[...homeFaqs]} />
@@ -65,7 +66,7 @@ export default function HomePage() {
           practical base for valley commutes and outdoor recreation.
         </p>
         <p className="mt-4 text-gray-600 dark:text-gray-300">
-          Whether you’re looking for a first home, an upgrade, or an investment property among Peccole Ranch homes, 
+          Whether you’re looking for a first home, an upgrade, or an investment property among Peccole Ranch homes,
           we focus on this neighborhood so we can give you hyperlocal market insight and a smooth experience.
         </p>
       </section>
@@ -97,12 +98,20 @@ export default function HomePage() {
         </p>
       </section>
 
+      <AmenityMapSection />
+
       <section className="mt-12 flex flex-wrap gap-6">
         <Link
           href="/peccole-ranch"
           className="font-medium text-gray-900 underline underline-offset-4 dark:text-white"
         >
           Peccole Ranch Homes for Sale
+        </Link>
+        <Link
+          href="/amenities"
+          className="font-medium text-gray-900 underline underline-offset-4 dark:text-white"
+        >
+          Nearby amenities
         </Link>
         <Link
           href="/buyers"

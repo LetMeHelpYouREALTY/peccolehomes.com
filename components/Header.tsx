@@ -7,12 +7,15 @@ export function Header() {
         <Link href="/" className="text-xl font-semibold text-gray-900 dark:text-white">
           Peccole Homes
         </Link>
-        <nav className="flex gap-6 text-sm font-medium text-gray-600 dark:text-gray-300">
+        <nav className="flex flex-wrap justify-end gap-x-6 gap-y-2 text-sm font-medium text-gray-600 dark:text-gray-300">
           <Link href="/" className="hover:text-gray-900 dark:hover:text-white">
             Home
           </Link>
           <Link href="/peccole-ranch" className="hover:text-gray-900 dark:hover:text-white">
             Peccole Ranch
+          </Link>
+          <Link href="/amenities" className="hover:text-gray-900 dark:hover:text-white">
+            Amenities
           </Link>
           <Link href="/buyers" className="hover:text-gray-900 dark:hover:text-white">
             Buy

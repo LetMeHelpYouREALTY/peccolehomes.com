@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { AmenityMapSection } from "@/components/AmenityMapSection";
 import { WebPageJsonLd } from "@/components/WebPageJsonLd";
 import { BreadcrumbJsonLd } from "@/components/BreadcrumbJsonLd";
 import { agent, brokerage } from "@/lib/site";
@@ -54,6 +55,7 @@ export default function PeccoleRanchPage() {
           Why buyers choose Peccole Ranch
         </h2>
         <ul className="list-disc pl-6 text-gray-600 dark:text-gray-300">
+          <li>CCSD school assignments — verify your address with the CCSD Zoning Search</li>
           <li>Parks, walking paths, and outdoor recreation</li>
           <li>Clubhouse, tennis, and on-site amenities (varies by sub-association)</li>
           <li>Convenient access to the 215 and Red Rock Canyon</li>
@@ -70,13 +72,19 @@ export default function PeccoleRanchPage() {
           <Link href="/contact" className="font-medium underline underline-offset-4">
             Contact us
           </Link>{" "}
-          for current listings, or{" "}
+          for current listings, explore{" "}
+          <Link href="/amenities" className="font-medium underline underline-offset-4">
+            nearby amenities
+          </Link>
+          , or{" "}
           <Link href="/sellers" className="font-medium underline underline-offset-4">
             plan your sale
           </Link>{" "}
           with a listing consultation.
         </p>
       </section>
+
+      <AmenityMapSection variant="compact" />
 
       <p className="mt-10">
         <Link href="/" className="font-medium text-gray-900 underline underline-offset-4 dark:text-white">

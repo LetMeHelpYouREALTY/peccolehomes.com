@@ -4,10 +4,10 @@ import { AgentTrustBlock } from "@/components/AgentTrustBlock";
 import { AmenitiesPageJsonLd, faqItems } from "@/components/AmenitiesPageJsonLd";
 import { WebPageJsonLd } from "@/components/WebPageJsonLd";
 import { community } from "@/lib/amenities";
-import { agent, brokerage, site } from "@/lib/site";
+import { agent, site } from "@/lib/site";
 
 const pageTitle = "Nearby Amenities";
-const description = `Grocery, parks, golf, healthcare, and shopping near ${community.name} in west Las Vegas. Map and guide from ${agent.name}, ${brokerage.name}.`;
+const description = `Grocery, parks, golf, healthcare, and shopping near ${community.name} in west Las Vegas. Map and guide from ${agent.name}, ${agent.credential}.`;
 
 export const metadata: Metadata = {
   title: pageTitle,

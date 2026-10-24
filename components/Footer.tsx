@@ -52,9 +52,11 @@ export function Footer() {
       </div>
       <div className="border-t border-line/15">
         <div className="mx-auto max-w-6xl space-y-3 px-4 py-8 text-sm text-muted">
-          <p>{brokerage.name}</p>
           <p>
-            {agent.name}, {agent.credential} | Nevada License {agent.license}
+            {brokerage.name} since September 2008 · License {agent.license}
+          </p>
+          <p>
+            {agent.name}, {agent.credential}
           </p>
           <p>Equal Housing Opportunity.</p>
           <p>

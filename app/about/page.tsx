@@ -7,9 +7,9 @@ import { pageMeta } from "@/lib/seo";
 
 const title = "About Dr. Jan Duffy | Peccole Ranch";
 const description =
-  "Dr. Jan Duffy, REALTOR® licensed since 2008, serves Peccole Ranch buyers and sellers at 9501 Red Hills Rd.";
+  "Dr. Jan Duffy, REALTOR® licensed since 2008 · 35 years in Las Vegas, serves Peccole Ranch buyers and sellers at 9501 Red Hills Rd.";
 const answer =
-  "Dr. Jan Duffy, REALTOR®, has been licensed since 2008 and works with Peccole Ranch buyers and sellers. This site covers homes for sale, valuations, and the September 2026 market record. The published address is 9501 Red Hills Rd, Las Vegas, NV 89117. Call (702) 500-0810.";
+  "Dr. Jan Duffy, REALTOR®, has been licensed since 2008 · 35 years in Las Vegas and works with Peccole Ranch buyers and sellers. This site covers homes for sale, valuations, and the September 2026 market record. The published address is 9501 Red Hills Rd, Las Vegas, NV 89117. Call (702) 500-0810.";
 
 export async function generateMetadata() {
   return pageMeta({ title, description, path: "/about" });
@@ -49,7 +49,7 @@ export default function AboutPage() {
           This practice, in this place
         </h2>
         <p className="mt-4 text-muted">
-          {agent.name}, Las Vegas REALTOR®, licensed since 2008.
+          {agent.name}, Las Vegas REALTOR®, licensed since 2008 · 35 years in Las Vegas.
         </p>
         <p className="mt-4 text-muted">
           The work on this site is Peccole Ranch: listings, a valuation booking, and dated local figures.

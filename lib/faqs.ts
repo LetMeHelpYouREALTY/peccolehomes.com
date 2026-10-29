@@ -42,7 +42,7 @@ export const homeFaqs: Faq[] = [
   {
     question: "Who helps buyers and sellers in Peccole Ranch?",
     answer:
-      "Dr. Jan Duffy, REALTOR® licensed since 2008, serves Peccole Ranch buyers and sellers. The published address is 9501 Red Hills Rd, Las Vegas, NV 89117. The site phone is (702) 500-0810.",
+      "Dr. Jan Duffy, REALTOR® licensed since 2008 · 35 years in Las Vegas, serves Peccole Ranch buyers and sellers. The published address is 9501 Red Hills Rd, Las Vegas, NV 89117. The site phone is (702) 500-0810.",
   },
 ];
 

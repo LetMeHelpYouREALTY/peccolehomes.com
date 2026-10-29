@@ -9,6 +9,7 @@ import { usd } from "@/lib/format";
 import { septemberNeighborhood } from "@/lib/market";
 import { pageMeta } from "@/lib/seo";
 import { nap } from "@/lib/site";
+import FeaturedListing from "@/components/sections/FeaturedListing";
 
 const title = "Peccole Ranch Homes for Sale | Las Vegas";
 const description =
@@ -70,6 +71,12 @@ export default function HomePage() {
       <p className="mx-auto max-w-6xl px-4 pt-3 text-[0.72rem] uppercase tracking-[0.18em] text-muted">
         Illustrative photograph. Not a listing.
       </p>
+      <FeaturedListing
+        phone={nap.phone}
+        phoneHref={`tel:${nap.phoneTel}`}
+        siteHost="peccolehomes.com"
+      />
+
 
       <div className="mx-auto max-w-6xl px-4 py-20">
         <section aria-labelledby="snapshot-heading">

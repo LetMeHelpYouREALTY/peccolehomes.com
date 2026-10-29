@@ -30,8 +30,13 @@ export const geo = {
 /** Google Maps URL for Directions CTA */
 export const directionsUrl = `https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(fullAddress)}`;
 
-/** Replace with your GBP review page URL */
-export const googleReviewsUrl = "https://search.google.com/local/writereview?placeid=PLACE_ID";
+/**
+ * Google "Write a review" URL for your Google Business Profile.
+ * Set NEXT_PUBLIC_GOOGLE_PLACE_ID to your GBP Place ID (find it in GBP → Business info, or in the place URL on Google Maps).
+ * If unset, link uses placeholder and should be updated before launch.
+ */
+const placeId = process.env.NEXT_PUBLIC_GOOGLE_PLACE_ID ?? "PLACE_ID";
+export const googleReviewsUrl = `https://search.google.com/local/writereview?placeid=${placeId}`;
 
 /** Agent and brokerage for AEO/schema and footer. */
 export const agent = {

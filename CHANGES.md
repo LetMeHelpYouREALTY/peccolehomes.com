@@ -96,4 +96,4 @@ Scored against the nine-point AEO checklist. Shipped the items that do not inven
 
 ## Compliance scan
 
-Visible copy was checked for “safe neighborhood,” “good schools,” “family-friendly,” “established community,” “exclusive,” “top-rated,” “straightforward,” and “702-222-1964.” None of those phrases are in the rendered pages. Brokerage name is in the footer and in JSON-LD / `llms.txt`, not in page headlines. Phone on the site is (702) 500-0810.
+Visible copy was checked for “safe neighborhood,” “good schools,” “family-friendly,” “established community,” “exclusive,” “top-rated,” “straightforward,” and “702-500-1955.” None of those phrases are in the rendered pages. Brokerage name is in the footer and in JSON-LD / `llms.txt`, not in page headlines. Phone on the site is (702) 500-0810.

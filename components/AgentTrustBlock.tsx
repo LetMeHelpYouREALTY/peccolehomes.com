@@ -10,7 +10,7 @@ export function AgentTrustBlock() {
         Your local Peccole Ranch REALTOR®
       </h2>
       <p className="mt-3 text-gray-600 dark:text-gray-300">
-        {agent.name}, in real estate since 1983, focuses on Peccole Ranch and west Las Vegas. Office: {nap.street}, {nap.city}, {nap.state} {nap.zip}.
+        {agent.name}, licensed since 2008 · 35 years in Las Vegas, focuses on Peccole Ranch and west Las Vegas. Office: {nap.street}, {nap.city}, {nap.state} {nap.zip}.
       </p>
       <div className="mt-4 flex flex-wrap gap-3">
         <a

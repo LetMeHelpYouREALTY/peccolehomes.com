@@ -63,8 +63,17 @@ export const area = {
   beside: "Summerlin",
 } as const;
 
-export const realScoutAgentEncodedId =
-  process.env.NEXT_PUBLIC_REALSCOUT_AGENT_ID ?? "QWdlbnQtMjI1MDUw";
+/** RealScout widgets need the encoded id (base64 of "Agent-<n>"); a bare numeric id renders nothing. */
+function normalizeRealScoutAgentId(raw: string | undefined): string {
+  const value = raw?.trim();
+  if (!value) return "QWdlbnQtMjI1MDUw";
+  if (/^\d+$/.test(value)) return btoa(`Agent-${value}`);
+  return value;
+}
+
+export const realScoutAgentEncodedId = normalizeRealScoutAgentId(
+  process.env.NEXT_PUBLIC_REALSCOUT_AGENT_ID,
+);
 
 export const ccsdLocatorUrl =
   "https://trans-webinfo.ccsd.net/InfoLocator/InfoLocator/Locator.aspx?OrgGuid=ORG-CCSD&ProfileGuid=CCSD-PROFILE-3";

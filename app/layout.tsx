@@ -6,6 +6,7 @@ import { LocalBusinessJsonLd } from "@/components/JsonLd";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import "./globals.css";
+import RealtorAnalytics from "../components/analytics/RealtorAnalytics";
 
 const display = Cormorant_Garamond({
   subsets: ["latin"],
@@ -82,6 +83,7 @@ e.parentNode.insertBefore(t,e);})
 window.widgetTracker("create", "WT-XQHVYQWW");
 window.widgetTracker("send", "pageview");
         `}</Script>
+  <RealtorAnalytics siteName="peccolehomes.com" />
 </body>
     </html>
   );
